@@ -1,0 +1,57 @@
+import create_deck
+
+minor_key_dict = {'Ace': ['fresh start'],
+                  'Two': ['decisions', 'planning'],
+                  'Three': ['others influence', 'team'],
+                  'Four': ['structure', 'solid foundation'],
+                  'Five': ['instability', 'instigate'],
+                  'Six': ['departure', 'harmony'],
+                  'Seven': ['temptation', 'fatigue'],
+                  'Eight': ['boundaries', 'foundation'],
+                  'Nine': ['drive', 'seeking perfection'],
+                  'Ten': ['extremes', 'completion'],
+                  'Page': ['new messages'],
+                  'Queen': ['full focus'],
+                  'King': ['secure', 'peace'],
+                  'Knight': ['evolution', 'suit bringer']
+                  }
+
+major_key_dict = {'Fool': ['new journey', 'unknown'],
+                  'Magician': ['creation'],
+                  'High Priestess': ['wisdom'],
+                  'Empress': ['life', 'create'],
+                  'Emperor': ['rule', 'conquer'],
+                  'Hierophant': ['tradition', 'structure'],
+                  'Lovers': ['love', 'decisions'],
+                  'Chariot': ['movement', 'peace'],
+                  'Strength': ['bravery', 'competence'],
+                  'Hermit': ['reflection', 'assessment'],
+                  'Wheel of Fortune': ['luck', 'karma'],
+                  'Justice': ['consequences', 'honesty', 'lessons'],
+                  'Hanged Man': ['sacrifice', 'let go'],
+                  'Death': ['renewal', 'change'],
+                  'Temperance': ['balance', 'tranquility'],
+                  'Devil': ['addiction', 'obsession', 'trapped'],
+                  'Tower': ['sudden upheaval', 'violence', 'chaos'],
+                  'Star': ['hope', 'inspiration'],
+                  'Moon': ['anxiety', 'deception', 'subconscious'],
+                  'Sun': ['freedom', 'pregnancy', 'confidence'],
+                  'Judgement': ['forgiveness', 'evaluation'],
+                  'World': ['success', 'fulfilment', 'completion']
+                  }
+
+minor_wands_dict = {'Ace': ['spark of potential growth'],
+                  'Two': ['First fruits of labor'],
+                  'Three': ['Burst into the world'],
+                  'Four': ['Sexual and creative stability which risks boredom and routine'],
+                  'Five': ['Temptation to push for more, pull at the veil'],
+                  'Six': ['Ready to move outward, to go from solo to paired'],
+                  'Seven': ['temptation', 'fatigue'],
+                  'Eight': ['boundaries', 'foundation'],
+                  'Nine': ['drive', 'seeking perfection'],
+                  'Ten': ['extremes', 'completion'],
+                  'Page': ['new messages'],
+                  'Queen': ['full focus'],
+                  'King': ['secure', 'peace'],
+                  'Knight': ['evolution', 'suit bringer']
+                  }
