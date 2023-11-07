@@ -18,21 +18,17 @@ deck.shuffle()
 #
 # card2 = deck.deal()
 # print(card2)
-# print(card2.keyword)
-#
-card3 = deck.deal()
+# # print(card2.keyword)
+# #
+# card3 = deck.deal()
 # print(card3)
-# print(card3.keyword)
+# # print(card3.keyword)
+# print(card3.modality())
 
 
-simple = create_spreads.SimpleThreeCardSpread()
-past_card = simple.past_card()
-print(past_card)
-print(past_card.keyword)
 
+momentum = create_spreads.MomentumSpread()
+print(momentum)
 
-# print(simple.past_card())
-# print(simple.present_card())
-# print(simple.future_card())
+print(momentum.quick_summary())
 
-# print(simple)

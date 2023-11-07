@@ -13,24 +13,38 @@ major_arcanas = (
 keywords_major = meanings_dictionary.major_key_dict
 keywords_minor = meanings_dictionary.minor_key_dict
 
+main_meaning_minor = meanings_dictionary.minor_full_dict
+main_meaning_major = meanings_dictionary.major_full_dict
+
+suits_major = meanings_dictionary.major_suit_dict
+ranks_major = meanings_dictionary.major_rank_dict
+
+modality_type = meanings_dictionary.modality_dict
 
 class MinorCard():
 
     def __init__(self, suit, rank):
         self.suit = suit
         self.rank = rank
+        self.arcana_type = 'minor'
         self.keyword = keywords_minor[rank]
+        self.meaning = main_meaning_minor[rank + ' of ' + suit]
+        self.modality_type = modality_type[suit]
 
     def __str__(self):
         return self.rank + ' of ' + self.suit
 
     def arcana(self):
-        arcana = 'minor'
-        return arcana
+        return self.arcana_type
 
     def general_meaning(self):
         return self.keyword
 
+    def main_meaning(self):
+        return self.meaning
+
+    def modality(self):
+        return self.modality_type
 
 
 class MajorCard():
@@ -38,17 +52,26 @@ class MajorCard():
     def __init__(self, major_arcana):
         self.major_arcana = major_arcana
         self.keyword = keywords_major[major_arcana]
+        self.meaning = main_meaning_major[major_arcana]
+        self.arcana_type = 'major'
+        self.suit = suits_major[major_arcana]
+        self.rank = ranks_major[major_arcana]
+        self.modality_type = modality_type[major_arcana]
 
     def __str__(self):
         return self.major_arcana
 
     def arcana(self):
-        arcana = 'major'
-        return arcana
+        return self.arcana_type
 
     def general_meaning(self):
-        return self.keyowrds_major[self.major_arcana]
+        return self.keyword
 
+    def main_meaning(self):
+        return self.meaning
+
+    def modality(self):
+        return self.modality_type
 
 class Deck():
 
@@ -72,17 +95,3 @@ class Deck():
     def deal(self):
         single_card = self.deck.pop()
         return single_card
-
-# class CardMeaning():
-
-#     def __init__(self):
-
-
-# test_deck = Deck()
-# test_deck.shuffle()
-# # print(test_deck)
-
-# card1 = test_deck.deal()
-# print(card1)
-# card2 = test_deck.deal()
-# print(card2)

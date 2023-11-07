@@ -12,15 +12,15 @@ keywords_minor = meanings_dictionary.minor_key_dict
 
 # creating these now so that the card is drawn only once
 # should I get this from the ui or should i figure out how to only run the function once?
-past_card = simple_spread.past_card()
-present_card = simple_spread.present_card()
-future_card = simple_spread.future_card()
+past_card = simple_spread.past()
+present_card = simple_spread.present()
+future_card = simple_spread.future()
 
 
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(692, 284)
+        Form.resize(692, 600)
         self.widget = QtWidgets.QWidget(parent=Form)
         self.widget.setGeometry(QtCore.QRect(30, 30, 621, 91))
         self.widget.setObjectName("widget")
