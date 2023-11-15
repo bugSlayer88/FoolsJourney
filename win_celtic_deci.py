@@ -6,8 +6,6 @@ from win_celtic_meaning import Ui_CelticDecipherMeanings
 import create_deck
 import meanings_dictionary
 
-main_meaning_major = meanings_dictionary.major_full_dict
-main_meaning_minor = meanings_dictionary.minor_full_dict
 main_meaning = meanings_dictionary.all_full_dict
 
 deck = create_deck.Deck()
@@ -359,92 +357,52 @@ class Ui_CelticDecipher(object):
 
         first_cards = cards[:22]
 
-        get_you_meaning = ''
-        if you_card_selected in first_cards:
-            get_you_meaning = main_meaning_major[str(you_card_selected)]
-        if you_card_selected not in first_cards:
-            get_you_meaning = main_meaning_minor[str(you_card_selected)]
+        get_you_meaning = main_meaning[str(you_card_selected)]
 
         self.ui.you_desc.setText(get_you_meaning)
         self.ui.you_desc.setWordWrap(True)
 
-        get_obs_meaning = ''
-        if obs_card_selected in first_cards:
-            get_obs_meaning = main_meaning_major[str(obs_card_selected)]
-        if obs_card_selected not in first_cards:
-            get_obs_meaning = main_meaning_minor[str(obs_card_selected)]
+        get_obs_meaning = main_meaning[str(obs_card_selected)]
 
         self.ui.obs_desc.setText(get_obs_meaning)
         self.ui.obs_desc.setWordWrap(True)
 
-        get_abv_meaning = ''
-        if abv_card_selected in first_cards:
-            get_abv_meaning = main_meaning_major[str(abv_card_selected)]
-        if abv_card_selected not in first_cards:
-            get_abv_meaning = main_meaning_minor[str(abv_card_selected)]
+        get_abv_meaning = main_meaning[str(abv_card_selected)]
 
         self.ui.abv_desc.setText(get_abv_meaning)
         self.ui.abv_desc.setWordWrap(True)
 
-        get_blo_meaning = ''
-        if blo_card_selected in first_cards:
-            get_blo_meaning = main_meaning_major[str(blo_card_selected)]
-        if blo_card_selected not in first_cards:
-            get_blo_meaning = main_meaning_minor[str(blo_card_selected)]
+        get_blo_meaning = main_meaning[str(blo_card_selected)]
 
         self.ui.blo_desc.setText(get_blo_meaning)
         self.ui.blo_desc.setWordWrap(True)
 
-        get_bhi_meaning = ''
-        if bhi_card_selected in first_cards:
-            get_bhi_meaning = main_meaning_major[str(bhi_card_selected)]
-        if bhi_card_selected not in first_cards:
-            get_bhi_meaning = main_meaning_minor[str(bhi_card_selected)]
+        get_bhi_meaning = main_meaning[str(bhi_card_selected)]
 
         self.ui.bhi_desc.setText(get_bhi_meaning)
         self.ui.bhi_desc.setWordWrap(True)
 
-        get_bef_meaning = ''
-        if bef_card_selected in first_cards:
-            get_bef_meaning = main_meaning_major[str(bef_card_selected)]
-        if bef_card_selected not in first_cards:
-            get_bef_meaning = main_meaning_minor[str(bef_card_selected)]
+        get_bef_meaning = main_meaning[str(bef_card_selected)]
 
         self.ui.bef_desc.setText(get_bef_meaning)
         self.ui.bef_desc.setWordWrap(True)
 
-        get_unw_meaning = ''
-        if unw_card_selected in first_cards:
-            get_unw_meaning = main_meaning_major[str(unw_card_selected)]
-        if unw_card_selected not in first_cards:
-            get_unw_meaning = main_meaning_minor[str(unw_card_selected)]
+        get_unw_meaning = main_meaning[str(unw_card_selected)]
 
         self.ui.unw_desc.setText(get_unw_meaning)
         self.ui.unw_desc.setWordWrap(True)
 
-        get_hom_meaning = ''
-        if hom_card_selected in first_cards:
-            get_hom_meaning = main_meaning_major[str(hom_card_selected)]
-        if hom_card_selected not in first_cards:
-            get_hom_meaning = main_meaning_minor[str(hom_card_selected)]
+        get_hom_meaning = main_meaning[str(hom_card_selected)]
 
         self.ui.hom_desc.setText(get_hom_meaning)
         self.ui.hom_desc.setWordWrap(True)
 
-        get_hnf_meaning = ''
-        if hnf_card_selected in first_cards:
-            get_hnf_meaning = main_meaning_major[str(hnf_card_selected)]
-        if hnf_card_selected not in first_cards:
-            get_hnf_meaning = main_meaning_minor[str(hnf_card_selected)]
+        get_hnf_meaning = main_meaning[str(hnf_card_selected)]
 
         self.ui.hnf_desc.setText(get_hnf_meaning)
         self.ui.hnf_desc.setWordWrap(True)
 
-        get_ans_meaning = ''
-        if ans_card_selected in first_cards:
-            get_ans_meaning = main_meaning_major[str(ans_card_selected)]
-        if ans_card_selected not in first_cards:
-            get_ans_meaning = main_meaning_minor[str(ans_card_selected)]
+        get_ans_meaning = main_meaning[str(ans_card_selected)]
 
         self.ui.ans_desc.setText(get_ans_meaning)
         self.ui.ans_desc.setWordWrap(True)

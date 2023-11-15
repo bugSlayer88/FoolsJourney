@@ -5,6 +5,7 @@ class Ui_Decipher(object):
     def setupUi(self, Decipher):
         Decipher.setObjectName("Decipher")
         Decipher.resize(465, 297)
+
         self.card_meaning_label = QtWidgets.QLabel(parent=Decipher)
         self.card_meaning_label.setGeometry(QtCore.QRect(50, 100, 371, 161))
         font = QtGui.QFont()
@@ -13,6 +14,7 @@ class Ui_Decipher(object):
         self.card_meaning_label.setFont(font)
         self.card_meaning_label.setText("")
         self.card_meaning_label.setObjectName("card_meaning_label")
+
         self.card_label = QtWidgets.QLabel(parent=Decipher)
         self.card_label.setGeometry(QtCore.QRect(50, 20, 371, 31))
         font = QtGui.QFont()

@@ -9,6 +9,7 @@ from tarot_spreads.single_card import SingleCard
 
 main_meaning_major = meanings_dictionary.major_full_dict
 main_meaning_minor = meanings_dictionary.minor_full_dict
+main_meaning = meanings_dictionary.all_full_dict
 
 image_dir = 'images/marseille'
 images = os.listdir(image_dir)
@@ -70,17 +71,9 @@ class UiSingleDecipher(object):
         card_selected = self.single_card_combo.currentText()
         self.ui.card_label.setText(card_selected + ' Meaning')
 
-        first_cards = cards[:22]
-
-        if card_selected in first_cards:
-            get_meaning = main_meaning_major[str(card_selected)]
-            self.ui.card_meaning_label.setText(get_meaning)
-            self.ui.card_meaning_label.setWordWrap(True)
-
-        if card_selected not in first_cards:
-            get_meaning = main_meaning_minor[str(card_selected)]
-            self.ui.card_meaning_label.setText(get_meaning)
-            self.ui.card_meaning_label.setWordWrap(True)
+        get_meaning = main_meaning[str(card_selected)]
+        self.ui.card_meaning_label.setText(get_meaning)
+        self.ui.card_meaning_label.setWordWrap(True)
 
         self.window.show()
 

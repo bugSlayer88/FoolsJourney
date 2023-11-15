@@ -4,24 +4,13 @@ from win_three_deci import Ui_ThreeDecipher
 from win_single_deci import UiSingleDecipher
 from win_celtic_deci import Ui_CelticDecipher
 
+from win_single_read import Ui_SingleReading
 from win_three_read import Ui_ThreeReading
 
 spreads = ['Single Card', 'Simple Three Cards', 'Celtic Cross', 'Quick Focus']
 
 
 class Ui_MainTarotWindow(object):
-    # def open_decipher_window(self):
-    #     spread_selected = self.spread_combo.currentText()
-    #     self.window = QtWidgets.QWidget()
-    #     if spread_selected == 'Single Card':
-    #         self.ui = UiSingleDecipher()
-    #     if spread_selected == 'Simple Three Cards':
-    #         self.ui = Ui_ThreeDecipher()
-    #     if spread_selected == 'Celtic Cross':
-    #         self.ui = Ui_CelticDecipher()
-    #     self.ui.setupUi(self.window)
-    #     self.window.show()
-
     def setupUi(self, MainTarotWindow):
         MainTarotWindow.setObjectName("MainTarotWindow")
         MainTarotWindow.resize(603, 295)
@@ -44,15 +33,17 @@ class Ui_MainTarotWindow(object):
         self.reading_btn.setFont(font)
         self.reading_btn.setObjectName("reading_btn")
 
-        self.decipher_btn = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.decipher_btn.clicked.connect(self.open_decipher_window)
+        self.reading_btn.clicked.connect(self.open_reading_window)
 
+        self.decipher_btn = QtWidgets.QPushButton(parent=self.centralwidget)
         self.decipher_btn.setGeometry(QtCore.QRect(310, 200, 231, 61))
         font = QtGui.QFont()
         font.setFamily("Gelo")
         font.setPointSize(16)
         self.decipher_btn.setFont(font)
         self.decipher_btn.setObjectName("decipher_btn")
+
+        self.decipher_btn.clicked.connect(self.open_decipher_window)
 
         self.spread_label = QtWidgets.QLabel(parent=self.centralwidget)
         self.spread_label.setGeometry(QtCore.QRect(60, 90, 531, 51))
@@ -104,11 +95,11 @@ class Ui_MainTarotWindow(object):
         spread_selected = self.spread_combo.currentText()
         self.window = QtWidgets.QWidget()
         if spread_selected == 'Single Card':
-            # self.ui = UiSingleDec
+            self.ui = Ui_SingleReading()
         if spread_selected == 'Simple Three Cards':
             self.ui = Ui_ThreeReading()
-        if spread_selected == 'Celtic Cross':
-            # self.ui = Ui_CelticDecipher()
+        # if spread_selected == 'Celtic Cross':
+        #     # self.ui = Ui_CelticDecipher()
         self.ui.setupUi(self.window)
         self.window.show()
 
