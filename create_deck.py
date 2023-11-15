@@ -1,13 +1,13 @@
 import random
 import meanings_dictionary
 
-suits = ('Wands', 'Pentacles', 'Swords', 'Cups')
+suits = ('Wands', 'Coins', 'Swords', 'Cups')
 ranks = ('Ace', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Page', 'Queen', 'King',
          'Knight')
 
 major_arcanas = (
-    'Fool', 'Magician', 'High Priestess', 'Empress', 'Emperor', 'Hierophant', 'Lovers', 'Chariot', 'Strength',
-    'Hermit', 'Wheel of Fortune', 'Justice', 'Hanged Man', 'Death', 'Temperance', 'Devil', 'Tower', 'Star',
+    'Fool', 'Magician', 'High Priestess', 'Empress', 'Emperor', 'Hierophant', 'Lovers', 'Chariot', 'Justice',
+    'Hermit', 'Wheel of Fortune', 'Strength', 'Hanged Man', 'Death', 'Temperance', 'Devil', 'Tower', 'Star',
     'Moon', 'Sun', 'Judgement', 'World')
 
 keywords_major = meanings_dictionary.major_key_dict
@@ -20,6 +20,7 @@ suits_major = meanings_dictionary.major_suit_dict
 ranks_major = meanings_dictionary.major_rank_dict
 
 modality_type = meanings_dictionary.modality_dict
+
 
 class MinorCard():
 
@@ -73,6 +74,7 @@ class MajorCard():
     def modality(self):
         return self.modality_type
 
+
 class Deck():
 
     def __init__(self):
@@ -95,3 +97,13 @@ class Deck():
     def deal(self):
         single_card = self.deck.pop()
         return single_card
+
+    def list_cards(self):
+        # all_cards = []
+        # for card in self.deck:
+        #     all_cards = str(card)
+        # return all_cards
+        deck_compile_list = ''
+        for card in self.deck:
+            deck_compile_list += card.__str__() + ','
+        return deck_compile_list.split(',')

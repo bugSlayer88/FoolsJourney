@@ -33,7 +33,7 @@ class MainWindow(QWidget):
     def reading_clicked(self):
         deck = create_deck.Deck()
         deck.shuffle()
-        simple = create_spreads.SimpleThreeCardSpread()
+        simple = create_spreads.SimpleThreeCard()
         self.label.setText(str(simple))
         print(simple)
 

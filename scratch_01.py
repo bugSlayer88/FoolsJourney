@@ -8,27 +8,18 @@ keywords_major = meanings_dictionary.major_key_dict
 keywords_minor = meanings_dictionary.minor_key_dict
 
 deck = create_deck.Deck()
-deck.shuffle()
+card1 = deck.shuffle()
+
+print(card1)
+
+
+deck.deal()
 
 # print(deck)
-
-# card1 = deck.deal()
-# print(card1)
-# print(card1.keyword)
-#
-# card2 = deck.deal()
-# print(card2)
-# # print(card2.keyword)
-# #
-# card3 = deck.deal()
-# print(card3)
-# # print(card3.keyword)
-# print(card3.modality())
+# print(str(deck))
+# print()
 
 
 
-momentum = create_spreads.MomentumSpread()
-print(momentum)
 
-print(momentum.quick_summary())
 

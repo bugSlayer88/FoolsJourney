@@ -4,7 +4,7 @@ import create_spreads
 
 deck = create_deck.Deck()
 deck.shuffle()
-simple_spread = create_spreads.SimpleThreeCardSpread()
+simple_spread = create_spreads.SimpleThreeCard()
 
 class Ui_Form(object):
     def setupUi(self, Form):

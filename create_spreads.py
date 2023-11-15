@@ -5,7 +5,7 @@ deck = create_deck.Deck()
 deck.shuffle()
 
 
-class SimpleThreeCardSpread():
+class SimpleThreeCard():
 
     def __init__(self):
         self.past_card = deck.deal()
@@ -24,8 +24,12 @@ class SimpleThreeCardSpread():
     def future(self):
         return self.future_card
 
+    @property
+    def card_amount(self):
+        return 3
 
-class MomentumSpread():
+
+class Momentum():
 
     def __init__(self):
         self.now_card = deck.deal()
@@ -62,6 +66,10 @@ class MomentumSpread():
     def let_go_of(self):
         return self.let_go_card
 
+    @property
+    def card_amount(self):
+        return 7
+
     def quick_summary(self):
         card_list = [self.person_now(), self.obstacle_now(), self.past(), self.present(),
                      self.future(), self.focus_on(), self.let_go_of()]
@@ -89,7 +97,7 @@ class MomentumSpread():
 
 
 
-class QuickFocusSpread():
+class QuickFocus():
 
     def __init__(self):
         self.current_you_card = deck.deal()
@@ -112,3 +120,34 @@ class QuickFocusSpread():
 
     def let_go(self):
         return self.let_go_card
+
+    @property
+    def card_amount(self):
+        return 4
+
+
+class CelticCross():
+
+    def __init__(self):
+        self.your_influence_card = deck.deal()
+        self.obstacle_card = deck.deal()
+        self.best_outcome_card = deck.deal()
+        self.foundation_card = deck.deal()
+        self.past_card = deck.deal()
+        self.future_card = deck.deal()
+        self.pres_card = deck.deal()
+        self.home_card = deck.deal()
+        self.hope_fear_card = deck.deal()
+        self.answer_card = deck.deal()
+
+    def __str__(self):
+        return ('{}'.format(self.your_influence_card()))
+
+    def influence_now(self):
+        return self.your_influence_card
+    def obstacle(self):
+        return self.obstacle_card
+
+    def outcome(self):
+        return self.best_outcome_card
+

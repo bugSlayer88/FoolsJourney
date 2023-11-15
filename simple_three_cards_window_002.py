@@ -3,9 +3,11 @@ import create_deck
 import create_spreads
 import meanings_dictionary
 
+
+
 deck = create_deck.Deck()
 deck.shuffle()
-simple_spread = create_spreads.SimpleThreeCardSpread()
+simple_spread = create_spreads.SimpleThreeCard()
 keywords_major = meanings_dictionary.major_key_dict
 keywords_minor = meanings_dictionary.minor_key_dict
 
