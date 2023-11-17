@@ -5,6 +5,7 @@ from PyQt6.QtGui import QPixmap
 
 import create_deck
 import meanings_dictionary
+from tarot_spreads.simple_three import SimpleThreeCard
 
 from win_three_meaning import Ui_ThreeExplainPopup
 
@@ -13,6 +14,8 @@ images = os.listdir(image_dir)
 files_path = [os.path.abspath(x) for x in images]
 
 main_meaning = meanings_dictionary.all_full_dict
+
+tarot_spread = SimpleThreeCard()
 
 deck = create_deck.Deck()
 deck.shuffle()
@@ -140,6 +143,9 @@ class Ui_ThreeReading(object):
         self.retranslateUi(UiThreeReading)
         QtCore.QMetaObject.connectSlotsByName(UiThreeReading)
 
+    # def show_meaning(self):
+    #     self.fut_img.setStyleSheet()
+
     def launch_decipher_window(self):
         self.window = QtWidgets.QWidget()
         self.ui = Ui_ThreeExplainPopup()
@@ -173,25 +179,29 @@ class Ui_ThreeReading(object):
         self.window.show()
 
     def draw_pas_card(self):
-        pas_card = deck.deal()
+        # pas_card = deck.deal()
+        pas_card = SimpleThreeCard().past_card
         pic_path = 'images/marseille/{}.png'.format(str(pas_card).replace(" ", "_"))
         self.pas_image = QPixmap(pic_path).scaled(175, 315)
         self.pas_img.setPixmap(self.pas_image)
         self.pas_card_name.setText(str(pas_card))
 
     def draw_pre_card(self):
-        pre_card = deck.deal()
+        pre_card = SimpleThreeCard().present_card
+        # pre_card = deck.deal()
         pic_path = 'images/marseille/{}.png'.format(str(pre_card).replace(" ", "_"))
         self.pre_image = QPixmap(pic_path).scaled(175, 315)
         self.pre_img.setPixmap(self.pre_image)
         self.pre_card_name.setText(str(pre_card))
 
     def draw_fut_card(self):
-        fut_card = deck.deal()
+        fut_card = SimpleThreeCard().future_card
+        # fut_card = deck.deal()
         pic_path = 'images/marseille/{}.png'.format(str(fut_card).replace(" ", "_"))
         self.fut_image = QPixmap(pic_path).scaled(175, 315)
         self.fut_img.setPixmap(self.fut_image)
         self.fut_card_name.setText(str(fut_card))
+        print(SimpleThreeCard().quick_summary())
 
     def retranslateUi(self, UiThreeReading):
         _translate = QtCore.QCoreApplication.translate

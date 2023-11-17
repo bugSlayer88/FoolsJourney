@@ -1,7 +1,7 @@
 import os
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-from PyQt6.QtGui import QPixmap
+from PyQt6.QtGui import QPixmap, QMovie, QIcon
 
 import create_deck
 import meanings_dictionary
@@ -28,6 +28,13 @@ class Ui_SingleReading(object):
         self.card_img.setAutoFillBackground(True)
         self.card_img.setText("")
         self.card_img.setObjectName("card_img")
+
+        pixmap = QPixmap('images/marseille/back.png').scaled(175, 315)
+        self.card_img.setPixmap(pixmap)
+        # self.card_img.setScaledContents(True)
+        # movie = QMovie('anim/Comp_1/testgif.gif')
+        # self.card_img.setMovie(movie)
+        # movie.start()
 
         self.card_label = QtWidgets.QLabel(parent=UiSingleReading)
         self.card_label.setGeometry(QtCore.QRect(80, 20, 121, 22))
@@ -88,6 +95,10 @@ class Ui_SingleReading(object):
 
     def draw_card(self):
         one_card = deck.deal()
+        # movie = QMovie('anim/Comp_1/testgif.gif')
+        # self.card_img.setMovie(movie)
+        # movie.loopCount(1)
+        # movie.start()
         pic_path = 'images/marseille/{}.png'.format(str(one_card).replace(" ", "_"))
         self.card_image = QPixmap(pic_path).scaled(175, 315)
         self.card_img.setPixmap(self.card_image)
