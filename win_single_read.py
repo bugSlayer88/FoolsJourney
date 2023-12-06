@@ -1,30 +1,22 @@
 import os
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtGui import QPixmap
+from PyQt6.QtWidgets import QMessageBox
 
 import create_deck
-
-import deck_redo
 
 import meanings_dictionary
 
 from win_single_meaning import Ui_Decipher
 
 image_dir = 'images/marseille'
-images = os.listdir(image_dir)
-files_path = [os.path.abspath(x) for x in images]
 
 main_meaning = meanings_dictionary.all_full_dict
 
-# deck = create_deck.Deck()
-# deck.shuffle()
+deck = create_deck.Deck()
 
-deck = deck_redo.TarotDeck()
 deck.shuffle()
 
-# cards = deck.list_cards()
-
-cards = deck.list_cards()
 
 
 class Ui_SingleReading(object):
@@ -103,13 +95,18 @@ class Ui_SingleReading(object):
 
         card_drawn = self.draw_btn.text()
 
-        self.ui.card_label.setText(str(card_drawn))
+        if card_drawn == 'Draw Card':
+            msg = QMessageBox()
+            msg.setWindowTitle("Error")
+            msg.setText("No card drawn, please draw a card")
+            msg.exec()
+        else:
+            self.ui.card_label.setText(str(card_drawn))
+            get_card_meaning = main_meaning[str(card_drawn)]
+            self.ui.card_meaning_label.setText(get_card_meaning)
+            self.ui.card_meaning_label.setWordWrap(True)
 
-        get_card_meaning = main_meaning[str(card_drawn)]
-        self.ui.card_meaning_label.setText(get_card_meaning)
-        self.ui.card_meaning_label.setWordWrap(True)
-
-        self.window.show()
+            self.window.show()
 
     def retranslateUi(self, UiSingleReading):
         _translate = QtCore.QCoreApplication.translate

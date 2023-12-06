@@ -1,10 +1,9 @@
 import os
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtGui import QPixmap
+from PyQt6.QtWidgets import QMessageBox
 
 import create_deck
-
-import deck_redo
 
 import meanings_dictionary
 from win_single_meaning import Ui_Decipher
@@ -12,16 +11,10 @@ from win_single_meaning import Ui_Decipher
 main_meaning = meanings_dictionary.all_full_dict
 
 image_dir = 'images/marseille'
-images = os.listdir(image_dir)
-files_path = [os.path.abspath(x) for x in images]
 
-# deck = create_deck.Deck()
-deck = deck_redo.TarotDeck()
+deck = create_deck.Deck()
 
-# cards = deck.list_cards()
-cards = deck_redo.TarotDeck().list_cards()
-# print(deck)
-
+cards = deck.list_cards()
 
 class Ui_SingleDecipher(object):
     def setupUi(self, SingleDecipher):
@@ -90,18 +83,26 @@ class Ui_SingleDecipher(object):
         self.single_card_image = QPixmap(pic_path).scaled(175, 315)
         self.card_img.setPixmap(self.single_card_image)
 
+
     def launch_meaning_window(self):
         self.window = QtWidgets.QWidget()
         self.ui = Ui_Decipher()
         self.ui.setupUi(self.window)
+
         card_selected = self.single_combo.currentText()
-        self.ui.card_label.setText(card_selected)
+        if card_selected == 'Select Card':
+            msg = QMessageBox()
+            msg.setWindowTitle("Error")
+            msg.setText("No card selected, please select a card")
+            msg.exec()
+        else:
+            self.ui.card_label.setText(card_selected)
 
-        get_meaning = main_meaning[str(card_selected)]
-        self.ui.card_meaning_label.setText(get_meaning)
-        self.ui.card_meaning_label.setWordWrap(True)
+            get_meaning = main_meaning[str(card_selected)]
+            self.ui.card_meaning_label.setText(get_meaning)
+            self.ui.card_meaning_label.setWordWrap(True)
 
-        self.window.show()
+            self.window.show()
 
     def retranslateUi(self, SingleDecipher):
         _translate = QtCore.QCoreApplication.translate
@@ -111,6 +112,7 @@ class Ui_SingleDecipher(object):
 
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     SingleDecipher = QtWidgets.QWidget()
     ui = Ui_SingleDecipher()
