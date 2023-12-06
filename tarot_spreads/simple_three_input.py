@@ -4,17 +4,16 @@ import create_deck
 import deck_redo
 
 # deck = create_deck.Deck()
-
 deck = deck_redo.TarotDeck()
-deck.shuffle()
+# deck.shuffle()
 
 
 class SimpleThreeCard():
 
-    def __init__(self):
-        self.past_card = deck.deal()
-        self.present_card = deck.deal()
-        self.future_card = deck.deal()
+    def __init__(self, past_card, present_card, future_card):
+        self.past_card = past_card
+        self.present_card = present_card
+        self.future_card = future_card
 
     def __str__(self):
         return 'Past = {}, Present = {}, Future = {}'.format(self.past(), self.present(), self.future())
@@ -32,8 +31,8 @@ class SimpleThreeCard():
     def card_amount(self):
         return 3
 
-    def quick_summary(self):
-        card_list = [self.past(), self.present(), self.future()]
+    def quick_summary(self, past_card, present_card, future_card):
+        card_list = [past_card, present_card, future_card]
 
         arcana_here = []
         for i in range(len(card_list)):

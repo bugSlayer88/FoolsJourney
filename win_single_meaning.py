@@ -1,27 +1,28 @@
+
 from PyQt6 import QtCore, QtGui, QtWidgets
 
 
 class Ui_Decipher(object):
     def setupUi(self, Decipher):
         Decipher.setObjectName("Decipher")
-        Decipher.resize(465, 297)
-
+        Decipher.resize(262, 360)
         self.card_meaning_label = QtWidgets.QLabel(parent=Decipher)
-        self.card_meaning_label.setGeometry(QtCore.QRect(50, 100, 371, 161))
+        self.card_meaning_label.setGeometry(QtCore.QRect(40, 70, 175, 260))
         font = QtGui.QFont()
-        font.setFamily("Adobe Hebrew")
-        font.setPointSize(14)
+        font.setFamily("Segoe UI")
+        font.setPointSize(9)
         self.card_meaning_label.setFont(font)
         self.card_meaning_label.setText("")
         self.card_meaning_label.setObjectName("card_meaning_label")
-
         self.card_label = QtWidgets.QLabel(parent=Decipher)
-        self.card_label.setGeometry(QtCore.QRect(50, 20, 371, 31))
+        self.card_label.setGeometry(QtCore.QRect(30, 20, 195, 26))
         font = QtGui.QFont()
-        font.setFamily("Adobe Hebrew")
+        font.setFamily("Cormorant Infant SemiBold")
         font.setPointSize(16)
         font.setBold(True)
         self.card_label.setFont(font)
+        self.card_label.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
+        self.card_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.card_label.setText("")
         self.card_label.setObjectName("card_label")
 
@@ -30,7 +31,7 @@ class Ui_Decipher(object):
 
     def retranslateUi(self, Decipher):
         _translate = QtCore.QCoreApplication.translate
-        Decipher.setWindowTitle(_translate("Decipher", "Form"))
+        Decipher.setWindowTitle(_translate("Decipher", "Single Description"))
 
 
 if __name__ == "__main__":

@@ -1,9 +1,11 @@
 import os
-
 from PyQt6 import QtCore, QtGui, QtWidgets
-from PyQt6.QtGui import QPixmap, QMovie, QIcon
+from PyQt6.QtGui import QPixmap
 
 import create_deck
+
+import deck_redo
+
 import meanings_dictionary
 
 from win_single_meaning import Ui_Decipher
@@ -14,76 +16,92 @@ files_path = [os.path.abspath(x) for x in images]
 
 main_meaning = meanings_dictionary.all_full_dict
 
-deck = create_deck.Deck()
+# deck = create_deck.Deck()
+# deck.shuffle()
+
+deck = deck_redo.TarotDeck()
 deck.shuffle()
+
+# cards = deck.list_cards()
+
 cards = deck.list_cards()
+
 
 class Ui_SingleReading(object):
     def setupUi(self, UiSingleReading):
         UiSingleReading.setObjectName("UiSingleReading")
-        UiSingleReading.resize(269, 558)
+        UiSingleReading.resize(340, 485)
+
+        self.decipher_btn = QtWidgets.QPushButton(parent=UiSingleReading)
+        self.decipher_btn.setGeometry(QtCore.QRect(70, 430, 200, 30))
+        font = QtGui.QFont()
+        font.setFamily("Cormorant Infant SemiBold")
+        font.setPointSize(16)
+        font.setBold(True)
+        self.decipher_btn.setFont(font)
+        self.decipher_btn.setObjectName("decipher_btn")
+        self.decipher_btn.setStyleSheet('''
+        QPushButton {
+            border:2px solid #aaa;
+            border-radius: 5px;
+        }
+        QPushButton:pressed {
+            background-color: #772EFF
+        }
+        ''')
+
+        self.decipher_btn.clicked.connect(self.launch_decipher_window)
 
         self.card_img = QtWidgets.QLabel(parent=UiSingleReading)
-        self.card_img.setGeometry(QtCore.QRect(51, 50, 175, 315))
+        self.card_img.setGeometry(QtCore.QRect(80, 30, 175, 315))
+        font = QtGui.QFont()
+        font.setFamily("Cormorant Infant SemiBold")
+        font.setPointSize(16)
+        font.setBold(True)
+        self.card_img.setFont(font)
         self.card_img.setAutoFillBackground(True)
         self.card_img.setText("")
         self.card_img.setObjectName("card_img")
 
         pixmap = QPixmap('images/marseille/back.png').scaled(175, 315)
         self.card_img.setPixmap(pixmap)
-        # self.card_img.setScaledContents(True)
-        # movie = QMovie('anim/Comp_1/testgif.gif')
-        # self.card_img.setMovie(movie)
-        # movie.start()
 
-        self.card_label = QtWidgets.QLabel(parent=UiSingleReading)
-        self.card_label.setGeometry(QtCore.QRect(80, 20, 121, 22))
+        self.draw_btn = QtWidgets.QPushButton(parent=UiSingleReading)
+        self.draw_btn.setGeometry(QtCore.QRect(30, 380, 280, 26))
         font = QtGui.QFont()
-        font.setFamily("Adobe Hebrew")
-        font.setPointSize(18)
-        self.card_label.setFont(font)
-        self.card_label.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
-        self.card_label.setObjectName("card_label")
+        font.setFamily("Cormorant Infant SemiBold")
+        font.setPointSize(16)
+        font.setBold(True)
+        self.draw_btn.setFont(font)
+        self.draw_btn.setObjectName("draw_btn")
+        self.draw_btn.setStyleSheet('''
+        QPushButton {
+            border:2px solid #aaa;
+            border-radius: 5px;
+        }
+        QPushButton:pressed {
+            background-color: #772EFF
+        }
+        ''')
 
-        self.card_btn = QtWidgets.QPushButton(parent=UiSingleReading)
-        self.card_btn.setGeometry(QtCore.QRect(50, 440, 175, 30))
-        font = QtGui.QFont()
-        font.setFamily("Adobe Hebrew")
-        font.setPointSize(12)
-        self.card_btn.setFont(font)
-        self.card_btn.setObjectName("card_btn")
-
-        self.card_btn.clicked.connect(self.draw_card)
-
-        self.card_title_label = QtWidgets.QLabel(parent=UiSingleReading)
-        self.card_title_label.setGeometry(QtCore.QRect(50, 390, 175, 22))
-        font = QtGui.QFont()
-        font.setFamily("Adobe Hebrew")
-        font.setPointSize(18)
-        self.card_title_label.setFont(font)
-        self.card_title_label.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
-        self.card_title_label.setText("")
-        self.card_title_label.setObjectName("card_title_label")
-
-        self.read_cards_btn = QtWidgets.QPushButton(parent=UiSingleReading)
-        self.read_cards_btn.setGeometry(QtCore.QRect(20, 490, 225, 30))
-        font = QtGui.QFont()
-        font.setFamily("Adobe Hebrew")
-        font.setPointSize(14)
-        self.read_cards_btn.setFont(font)
-        self.read_cards_btn.setObjectName("read_cards_btn")
-
-        self.read_cards_btn.clicked.connect(self.launch_decipher_window)
+        self.draw_btn.clicked.connect(self.draw_card)
 
         self.retranslateUi(UiSingleReading)
         QtCore.QMetaObject.connectSlotsByName(UiSingleReading)
+
+    def draw_card(self):
+        one_card = deck.deal()
+        pic_path = 'images/marseille/{}.png'.format(str(one_card).replace(" ", "_"))
+        self.card_image = QPixmap(pic_path).scaled(175, 315)
+        self.card_img.setPixmap(self.card_image)
+        self.draw_btn.setText(str(one_card))
 
     def launch_decipher_window(self):
         self.window = QtWidgets.QWidget()
         self.ui = Ui_Decipher()
         self.ui.setupUi(self.window)
 
-        card_drawn = self.card_title_label.text()
+        card_drawn = self.draw_btn.text()
 
         self.ui.card_label.setText(str(card_drawn))
 
@@ -93,23 +111,11 @@ class Ui_SingleReading(object):
 
         self.window.show()
 
-    def draw_card(self):
-        one_card = deck.deal()
-        # movie = QMovie('anim/Comp_1/testgif.gif')
-        # self.card_img.setMovie(movie)
-        # movie.loopCount(1)
-        # movie.start()
-        pic_path = 'images/marseille/{}.png'.format(str(one_card).replace(" ", "_"))
-        self.card_image = QPixmap(pic_path).scaled(175, 315)
-        self.card_img.setPixmap(self.card_image)
-        self.card_title_label.setText(str(one_card))
-
     def retranslateUi(self, UiSingleReading):
         _translate = QtCore.QCoreApplication.translate
-        UiSingleReading.setWindowTitle(_translate("UiSingleReading", "Form"))
-        self.card_label.setText(_translate("UiSingleReading", "Single Card"))
-        self.card_btn.setText(_translate("UiSingleReading", "Draw Card"))
-        self.read_cards_btn.setText(_translate("UiSingleReading", "Read My Card!"))
+        UiSingleReading.setWindowTitle(_translate("UiSingleReading", "Single Card Reading"))
+        self.decipher_btn.setText(_translate("UiSingleReading", "Show Explanation"))
+        self.draw_btn.setText(_translate("UiSingleReading", "Draw Card"))
 
 
 if __name__ == "__main__":

@@ -1,5 +1,3 @@
-import create_deck
-
 all_full_dict = {'Fool': 'The Fool evokes an enormous burst of evergy. Wherever he goes he brings this vital  '
                          'impulse. Charge forward!',
                  'Magician': 'A new beginning opens up to you. Make reasoning quick and set your focus. Make your '

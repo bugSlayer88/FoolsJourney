@@ -6,8 +6,9 @@ from win_celtic_deci import Ui_CelticDecipher
 
 from win_single_read import Ui_SingleReading
 from win_three_read import Ui_ThreeReading
+from win_celtic_read import Ui_CelticReading
 
-spreads = ['Single Card', 'Simple Three Cards', 'Celtic Cross', 'Quick Focus']
+spreads = ['Single Card', 'Simple Three Cards', 'Celtic Cross']
 
 
 class Ui_MainTarotWindow(object):
@@ -75,6 +76,18 @@ class Ui_MainTarotWindow(object):
         self.retranslateUi(MainTarotWindow)
         QtCore.QMetaObject.connectSlotsByName(MainTarotWindow)
 
+    def open_reading_window(self):
+        spread_selected = self.spread_combo.currentText()
+        self.window = QtWidgets.QWidget()
+        if spread_selected == 'Single Card':
+            self.ui = Ui_SingleReading()
+        if spread_selected == 'Simple Three Cards':
+            self.ui = Ui_ThreeReading()
+        if spread_selected == 'Celtic Cross':
+            self.ui = Ui_CelticReading()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
     def open_decipher_window(self):
         spread_selected = self.spread_combo.currentText()
         self.window = QtWidgets.QWidget()
@@ -90,19 +103,6 @@ class Ui_MainTarotWindow(object):
     def decipher_update(self):
         spread_selected = self.spread_combo.currentText()
         return spread_selected
-
-    def open_reading_window(self):
-        spread_selected = self.spread_combo.currentText()
-        self.window = QtWidgets.QWidget()
-        if spread_selected == 'Single Card':
-            self.ui = Ui_SingleReading()
-        if spread_selected == 'Simple Three Cards':
-            self.ui = Ui_ThreeReading()
-        # if spread_selected == 'Celtic Cross':
-        #     # self.ui = Ui_CelticDecipher()
-        self.ui.setupUi(self.window)
-        self.window.show()
-
 
     def retranslateUi(self, MainTarotWindow):
         _translate = QtCore.QCoreApplication.translate
