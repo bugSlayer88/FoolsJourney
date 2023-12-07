@@ -1,23 +1,18 @@
 import os
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtGui import QPixmap, QTransform
+from PyQt6.QtWidgets import QMessageBox
 
 import create_deck
 
-import deck_redo
-
 import meanings_dictionary
 from win_quick_focus_meaning import Ui_FocusDecipher
-# from tarot_spreads.quick_focus import QuickFocus
 
 main_meaning = meanings_dictionary.all_full_dict
 
 image_dir = 'images/marseille'
-images = os.listdir(image_dir)
-files_path = [os.path.abspath(x) for x in images]
 
-# deck = create_deck.Deck()
-deck = deck_redo.TarotDeck()
+deck = create_deck.Deck()
 cards = deck.list_cards()
 
 class Ui_QuickFocusDecipher(object):
@@ -242,29 +237,36 @@ class Ui_QuickFocusDecipher(object):
         letgo_card_selected = self.letgo_combo.currentText()
         focus_card_selected = self.focus_combo.currentText()
 
-        self.ui.you_title.setText(you_card_selected)
-        self.ui.obs_title.setText(obs_card_selected)
-        self.ui.letgo_title.setText(letgo_card_selected)
-        self.ui.focus_title.setText(focus_card_selected)
+        if you_card_selected == "Select Card" or obs_card_selected == "Select Card" or letgo_card_selected == ("Select "
+                                                                                                               "Card") or focus_card_selected == "Select Card":
+            msg = QMessageBox()
+            msg.setWindowTitle("Error")
+            msg.setText("Not enough cards selected, please select more cards")
+            msg.exec()
+        else:
+            self.ui.you_title.setText(you_card_selected)
+            self.ui.obs_title.setText(obs_card_selected)
+            self.ui.letgo_title.setText(letgo_card_selected)
+            self.ui.focus_title.setText(focus_card_selected)
 
-        get_you_meaning = main_meaning[str(you_card_selected)]
-        self.ui.you_img.setText(get_you_meaning)
-        self.ui.you_img.setWordWrap(True)
-        get_obs_meaning = main_meaning[str(obs_card_selected)]
-        self.ui.obs_img.setText(get_obs_meaning)
-        self.ui.obs_img.setWordWrap(True)
-        get_letgo_meaning = main_meaning[str(letgo_card_selected)]
-        self.ui.letgo_img.setText(get_letgo_meaning)
-        self.ui.letgo_img.setWordWrap(True)
-        get_focus_meaning = main_meaning[str(focus_card_selected)]
-        self.ui.focus_img.setText(get_focus_meaning)
-        self.ui.focus_img.setWordWrap(True)
+            get_you_meaning = main_meaning[str(you_card_selected)]
+            self.ui.you_img.setText(get_you_meaning)
+            self.ui.you_img.setWordWrap(True)
+            get_obs_meaning = main_meaning[str(obs_card_selected)]
+            self.ui.obs_img.setText(get_obs_meaning)
+            self.ui.obs_img.setWordWrap(True)
+            get_letgo_meaning = main_meaning[str(letgo_card_selected)]
+            self.ui.letgo_img.setText(get_letgo_meaning)
+            self.ui.letgo_img.setWordWrap(True)
+            get_focus_meaning = main_meaning[str(focus_card_selected)]
+            self.ui.focus_img.setText(get_focus_meaning)
+            self.ui.focus_img.setWordWrap(True)
 
-        self.window.show()
+            self.window.show()
 
     def retranslateUi(self, UiQuickFocusDecipher):
         _translate = QtCore.QCoreApplication.translate
-        UiQuickFocusDecipher.setWindowTitle(_translate("UiQuickFocusDecipher", "Decipher Quick Focus"))
+        UiQuickFocusDecipher.setWindowTitle(_translate("UiQuickFocusDecipher", "Quick Focus Decipher"))
         self.focus_label.setText(_translate("UiQuickFocusDecipher", "Focus On"))
         self.you_label.setText(_translate("UiQuickFocusDecipher", "Where You Are Now"))
         self.letgo_label.setText(_translate("UiQuickFocusDecipher", "Let Go Of"))

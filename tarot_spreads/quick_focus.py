@@ -1,9 +1,8 @@
 import random
 import create_deck
-import deck_redo
 
-# deck = create_deck.Deck()
-deck = deck_redo.TarotDeck()
+deck = create_deck.Deck()
+# deck = deck_redo.TarotDeck()
 deck.shuffle()
 
 

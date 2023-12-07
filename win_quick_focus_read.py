@@ -1,20 +1,22 @@
 import os
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtGui import QPixmap, QTransform
+from PyQt6.QtWidgets import QMessageBox
 
-import deck_redo
+import create_deck
 
 import meanings_dictionary
 
 from tarot_spreads.quick_focus import QuickFocus
-from win_quickfocus_meaning import Ui_FocusDecipher
+from win_quick_focus_meaning import Ui_FocusDecipher
 
 image_dir = 'images/marseille'
 main_meaning = meanings_dictionary.all_full_dict
 
-deck = deck_redo.TarotDeck()
+deck = create_deck.Deck()
 deck.shuffle()
 cards = deck.list_cards()
+
 
 class Ui_QuickFocusReading(object):
     def setupUi(self, UiQuickFocusReading):
@@ -197,32 +199,38 @@ class Ui_QuickFocusReading(object):
         let_go_drawn = self.letgo_btn.text()
         focus_drawn = self.focus_btn.text()
 
-        self.ui.you_title.setText(str(you_drawn))
-        self.ui.obs_title.setText(str(obs_drawn))
-        self.ui.letgo_title.setText(str(let_go_drawn))
-        self.ui.focus_title.setText(str(focus_drawn))
+        if you_drawn == "Draw Card" or obs_drawn == "Draw Card" or let_go_drawn == "Draw Card" or focus_drawn == "Draw Card":
+            msg = QMessageBox()
+            msg.setWindowTitle("Error")
+            msg.setText("No card selected, please select a card")
+            msg.exec()
+        else:
+            self.ui.you_title.setText(str(you_drawn))
+            self.ui.obs_title.setText(str(obs_drawn))
+            self.ui.letgo_title.setText(str(let_go_drawn))
+            self.ui.focus_title.setText(str(focus_drawn))
 
-        get_you_meaning = main_meaning[str(you_drawn)]
-        self.ui.you_img.setText(get_you_meaning)
-        self.ui.you_img.setWordWrap(True)
+            get_you_meaning = main_meaning[str(you_drawn)]
+            self.ui.you_img.setText(get_you_meaning)
+            self.ui.you_img.setWordWrap(True)
 
-        get_obs_meaning = main_meaning[str(obs_drawn)]
-        self.ui.obs_img.setText(get_obs_meaning)
-        self.ui.obs_img.setWordWrap(True)
+            get_obs_meaning = main_meaning[str(obs_drawn)]
+            self.ui.obs_img.setText(get_obs_meaning)
+            self.ui.obs_img.setWordWrap(True)
 
-        get_let_go_meaning = main_meaning[str(let_go_drawn)]
-        self.ui.letgo_img.setText(get_let_go_meaning)
-        self.ui.letgo_img.setWordWrap(True)
+            get_let_go_meaning = main_meaning[str(let_go_drawn)]
+            self.ui.letgo_img.setText(get_let_go_meaning)
+            self.ui.letgo_img.setWordWrap(True)
 
-        get_focus_meaning = main_meaning[str(focus_drawn)]
-        self.ui.focus_img.setText(get_focus_meaning)
-        self.ui.focus_img.setWordWrap(True)
+            get_focus_meaning = main_meaning[str(focus_drawn)]
+            self.ui.focus_img.setText(get_focus_meaning)
+            self.ui.focus_img.setWordWrap(True)
 
-        self.window.show()
+            self.window.show()
 
     def retranslateUi(self, UiQuickFocusReading):
         _translate = QtCore.QCoreApplication.translate
-        UiQuickFocusReading.setWindowTitle(_translate("UiQuickFocusReading", "Form"))
+        UiQuickFocusReading.setWindowTitle(_translate("UiQuickFocusReading", "Focus Reading"))
         self.focus_label.setText(_translate("UiQuickFocusReading", "Focus On"))
         self.decipher_btn.setText(_translate("UiQuickFocusReading", "Show Explanation"))
         self.letgo_label.setText(_translate("UiQuickFocusReading", "Let Go Of"))
@@ -236,6 +244,7 @@ class Ui_QuickFocusReading(object):
 
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     UiQuickFocusReading = QtWidgets.QWidget()
     ui = Ui_QuickFocusReading()
