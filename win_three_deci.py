@@ -1,11 +1,12 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtGui import QPixmap
+from PyQt6.QtWidgets import QMessageBox
 
 
 from win_three_meaning import Ui_ThreeExplainPopup
 
 import create_deck
-import deck_redo
+import create_tarot_deck
 import meanings_dictionary
 # from tarot_spreads.simple_three import SimpleThreeCard
 from tarot_spreads.simple_three_input import SimpleThreeCard
@@ -14,8 +15,8 @@ main_meaning = meanings_dictionary.all_full_dict
 
 # tarot_spread = SimpleThreeCard()
 
-# deck = create_deck.Deck()
-deck = deck_redo.TarotDeck()
+deck = create_deck.Deck()
+# deck = deck_redo.TarotDeck()
 cards = deck.list_cards()
 
 class Ui_ThreeDecipher(object):
@@ -200,35 +201,43 @@ class Ui_ThreeDecipher(object):
         self.window = QtWidgets.QWidget()
         self.ui = Ui_ThreeExplainPopup()
         self.ui.setupUi(self.window)
+
         pas_card_selected = self.pas_combo.currentText()
         pre_card_selected = self.pre_combo.currentText()
         fut_card_selected = self.fut_combo.currentText()
 
-        self.ui.pas_card_title.setText(pas_card_selected)
-        self.ui.pas_card_title.setWordWrap(True)
+        if pas_card_selected == "Select Card" or pre_card_selected == "Select Card" or fut_card_selected == ("Select "
+                                                                                                             "Card"):
+            msg = QMessageBox()
+            msg.setWindowTitle("Error")
+            msg.setText("No card selected, please select a card")
+            msg.exec()
+        else:
+            self.ui.pas_card_title.setText(pas_card_selected)
+            self.ui.pas_card_title.setWordWrap(True)
 
-        self.ui.pre_card_title.setText(pre_card_selected)
-        self.ui.pre_card_title.setWordWrap(True)
+            self.ui.pre_card_title.setText(pre_card_selected)
+            self.ui.pre_card_title.setWordWrap(True)
 
-        self.ui.fut_card_title.setText(fut_card_selected)
-        self.ui.fut_card_title.setWordWrap(True)
+            self.ui.fut_card_title.setText(fut_card_selected)
+            self.ui.fut_card_title.setWordWrap(True)
 
-        get_pas_meaning = main_meaning[str(pas_card_selected)]
+            get_pas_meaning = main_meaning[str(pas_card_selected)]
 
-        self.ui.pas_desc.setText(get_pas_meaning)
-        self.ui.pas_desc.setWordWrap(True)
+            self.ui.pas_desc.setText(get_pas_meaning)
+            self.ui.pas_desc.setWordWrap(True)
 
-        get_pre_meaning = main_meaning[str(pre_card_selected)]
+            get_pre_meaning = main_meaning[str(pre_card_selected)]
 
-        self.ui.pre_desc.setText(get_pre_meaning)
-        self.ui.pre_desc.setWordWrap(True)
+            self.ui.pre_desc.setText(get_pre_meaning)
+            self.ui.pre_desc.setWordWrap(True)
 
-        get_fut_meaning = main_meaning[str(fut_card_selected)]
+            get_fut_meaning = main_meaning[str(fut_card_selected)]
 
-        self.ui.fut_desc.setText(get_fut_meaning)
-        self.ui.fut_desc.setWordWrap(True)
+            self.ui.fut_desc.setText(get_fut_meaning)
+            self.ui.fut_desc.setWordWrap(True)
 
-        self.window.show()
+            self.window.show()
 
     def retranslateUi(self, UiThreeDecipher):
         _translate = QtCore.QCoreApplication.translate

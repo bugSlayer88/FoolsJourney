@@ -1,10 +1,9 @@
 import os
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtGui import QPixmap
+from PyQt6.QtWidgets import QMessageBox
 
 import create_deck
-
-import deck_redo
 
 import meanings_dictionary
 from tarot_spreads.simple_three import SimpleThreeCard
@@ -12,15 +11,12 @@ from tarot_spreads.simple_three import SimpleThreeCard
 from win_three_meaning import Ui_ThreeExplainPopup
 
 image_dir = 'images/marseille'
-# images = os.listdir(image_dir)
-# files_path = [os.path.abspath(x) for x in images]
 
 main_meaning = meanings_dictionary.all_full_dict
 
 tarot_spread = SimpleThreeCard()
 
-# deck = create_deck.Deck()
-deck = deck_redo.TarotDeck()
+deck = create_deck.Deck()
 deck.shuffle()
 cards = deck.list_cards()
 
@@ -201,28 +197,35 @@ class Ui_ThreeReading(object):
         pre_drawn = self.pre_btn.text()
         fut_drawn = self.fut_btn.text()
 
-        self.ui.pas_card_title.setText(str(pas_drawn))
-        self.ui.pas_card_title.setWordWrap(True)
+        if pas_drawn == 'Draw Card' or pre_drawn == 'Draw Card' or fut_drawn == 'Draw Card':
+            msg = QMessageBox()
+            msg.setWindowTitle("Error")
+            msg.setText("No cards drawn, please draw a card")
+            msg.exec()
 
-        self.ui.pre_card_title.setText(str(pre_drawn))
-        self.ui.pre_card_title.setWordWrap(True)
+        else:
+            self.ui.pas_card_title.setText(str(pas_drawn))
+            self.ui.pas_card_title.setWordWrap(True)
 
-        self.ui.fut_card_title.setText(str(fut_drawn))
-        self.ui.fut_card_title.setWordWrap(True)
+            self.ui.pre_card_title.setText(str(pre_drawn))
+            self.ui.pre_card_title.setWordWrap(True)
 
-        get_pas_meaning = main_meaning[str(pas_drawn)]
-        self.ui.pas_desc.setText(get_pas_meaning)
-        self.ui.pas_desc.setWordWrap(True)
+            self.ui.fut_card_title.setText(str(fut_drawn))
+            self.ui.fut_card_title.setWordWrap(True)
 
-        get_pre_meaning = main_meaning[str(pre_drawn)]
-        self.ui.pre_desc.setText(get_pre_meaning)
-        self.ui.pre_desc.setWordWrap(True)
+            get_pas_meaning = main_meaning[str(pas_drawn)]
+            self.ui.pas_desc.setText(get_pas_meaning)
+            self.ui.pas_desc.setWordWrap(True)
 
-        get_fut_meaning = main_meaning[str(fut_drawn)]
-        self.ui.fut_desc.setText(get_fut_meaning)
-        self.ui.fut_desc.setWordWrap(True)
+            get_pre_meaning = main_meaning[str(pre_drawn)]
+            self.ui.pre_desc.setText(get_pre_meaning)
+            self.ui.pre_desc.setWordWrap(True)
 
-        self.window.show()
+            get_fut_meaning = main_meaning[str(fut_drawn)]
+            self.ui.fut_desc.setText(get_fut_meaning)
+            self.ui.fut_desc.setWordWrap(True)
+
+            self.window.show()
 
     def retranslateUi(self, UiThreeReading):
         _translate = QtCore.QCoreApplication.translate
