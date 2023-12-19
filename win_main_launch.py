@@ -2,7 +2,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 
 from win_three_deci import Ui_ThreeDecipher
 from win_single_deci import Ui_SingleDecipher
-from win_quickfocus_deci import Ui_QuickFocusDecipher
+from win_quick_focus_deci import Ui_QuickFocusDecipher
 # from win_celtic_deci import Ui_CelticDecipher
 
 from win_single_read import Ui_SingleReading

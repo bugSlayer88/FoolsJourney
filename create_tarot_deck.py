@@ -31,16 +31,20 @@ class TarotCards():
 class TarotDeck():
 
     def __init__(self):
+        # self.cards = card_list
         self.deck = card_list
+
 
     def __str__(self):
         deck_compile = ''
+        # for card in self.deck:
         for card in self.deck:
             deck_compile += '\n' + card.__str__()
-        return 'The deck has:' + deck_compile
+        return 'This deck has:' + deck_compile
+
 
     def shuffle(self):
-        random.shuffle(self.deck)
+        random.shuffle(card_list)
 
     def deal(self):
         single_card = self.deck.pop()
@@ -48,21 +52,12 @@ class TarotDeck():
 
     def list_cards(self):
         deck_compile_list = ''
-        for card in self.deck:
+        for card in card_list:
             deck_compile_list += card.__str__() + ','
-        return deck_compile_list.split(',')
+            final_card_list = deck_compile_list[: len(deck_compile_list) - 2]
+        return final_card_list.split(',')
 
-# tester = TarotDeck()
-# #
-# print(tester.list_cards())
-# tester.shuffle()
-#
-# card1 = tester.deal()
-#
-# print(card1)
-#
-# card_tester = TarotCards(card1)
-#
-# print(card_tester.meaning)
+
+
 
 

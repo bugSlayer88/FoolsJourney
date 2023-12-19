@@ -1,12 +1,7 @@
 import random
 import create_deck
 
-import create_tarot_deck
-
 deck = create_deck.Deck()
-# deck = deck_redo.TarotDeck()
-# deck.shuffle()
-
 
 class SimpleThreeCard():
 

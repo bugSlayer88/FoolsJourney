@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>696</width>
-    <height>465</height>
+    <width>674</width>
+    <height>475</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,16 +16,17 @@
   <widget class="QLabel" name="pas_label">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>40</y>
-     <width>41</width>
-     <height>22</height>
+     <x>30</x>
+     <y>20</y>
+     <width>195</width>
+     <height>26</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Adobe Hebrew</family>
-     <pointsize>18</pointsize>
+     <family>Cormorant Infant SemiBold</family>
+     <pointsize>16</pointsize>
+     <bold>true</bold>
     </font>
    </property>
    <property name="layoutDirection">
@@ -34,20 +35,24 @@
    <property name="text">
     <string>Past</string>
    </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
   </widget>
   <widget class="QLabel" name="pres_label">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>40</y>
-     <width>81</width>
-     <height>22</height>
+     <x>240</x>
+     <y>20</y>
+     <width>195</width>
+     <height>26</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Adobe Hebrew</family>
-     <pointsize>18</pointsize>
+     <family>Cormorant Infant SemiBold</family>
+     <pointsize>16</pointsize>
+     <bold>true</bold>
     </font>
    </property>
    <property name="layoutDirection">
@@ -56,20 +61,24 @@
    <property name="text">
     <string>Present</string>
    </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
   </widget>
   <widget class="QLabel" name="fut_label">
    <property name="geometry">
     <rect>
-     <x>520</x>
-     <y>40</y>
-     <width>71</width>
-     <height>22</height>
+     <x>450</x>
+     <y>20</y>
+     <width>195</width>
+     <height>26</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Adobe Hebrew</family>
-     <pointsize>18</pointsize>
+     <family>Cormorant Infant SemiBold</family>
+     <pointsize>16</pointsize>
+     <bold>true</bold>
     </font>
    </property>
    <property name="layoutDirection">
@@ -78,14 +87,17 @@
    <property name="text">
     <string>Future</string>
    </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
   </widget>
   <widget class="QLabel" name="pas_desc">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>150</y>
+     <x>40</x>
+     <y>110</y>
      <width>175</width>
-     <height>300</height>
+     <height>260</height>
     </rect>
    </property>
    <property name="autoFillBackground">
@@ -93,15 +105,18 @@
    </property>
    <property name="text">
     <string/>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QLabel" name="pre_desc">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>150</y>
+     <x>250</x>
+     <y>110</y>
      <width>175</width>
-     <height>300</height>
+     <height>260</height>
     </rect>
    </property>
    <property name="autoFillBackground">
@@ -109,15 +124,18 @@
    </property>
    <property name="text">
     <string/>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QLabel" name="fut_desc">
    <property name="geometry">
     <rect>
-     <x>470</x>
-     <y>150</y>
+     <x>460</x>
+     <y>110</y>
      <width>175</width>
-     <height>300</height>
+     <height>260</height>
     </rect>
    </property>
    <property name="autoFillBackground">
@@ -126,20 +144,24 @@
    <property name="text">
     <string/>
    </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
   </widget>
-  <widget class="QLabel" name="fut_card_title">
+  <widget class="QLabel" name="pres_label_2">
    <property name="geometry">
     <rect>
-     <x>470</x>
-     <y>80</y>
-     <width>175</width>
-     <height>44</height>
+     <x>240</x>
+     <y>60</y>
+     <width>195</width>
+     <height>26</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Adobe Hebrew</family>
-     <pointsize>18</pointsize>
+     <family>Cormorant Infant SemiBold</family>
+     <pointsize>16</pointsize>
+     <bold>true</bold>
     </font>
    </property>
    <property name="layoutDirection">
@@ -148,20 +170,24 @@
    <property name="text">
     <string/>
    </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
   </widget>
-  <widget class="QLabel" name="pas_card_title">
+  <widget class="QLabel" name="pas_label_2">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>80</y>
-     <width>175</width>
-     <height>44</height>
+     <x>30</x>
+     <y>60</y>
+     <width>195</width>
+     <height>26</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Adobe Hebrew</family>
-     <pointsize>18</pointsize>
+     <family>Cormorant Infant SemiBold</family>
+     <pointsize>16</pointsize>
+     <bold>true</bold>
     </font>
    </property>
    <property name="layoutDirection">
@@ -170,20 +196,24 @@
    <property name="text">
     <string/>
    </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
   </widget>
-  <widget class="QLabel" name="pre_card_title">
+  <widget class="QLabel" name="fut_label_2">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>80</y>
-     <width>175</width>
-     <height>44</height>
+     <x>450</x>
+     <y>60</y>
+     <width>195</width>
+     <height>26</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Adobe Hebrew</family>
-     <pointsize>18</pointsize>
+     <family>Cormorant Infant SemiBold</family>
+     <pointsize>16</pointsize>
+     <bold>true</bold>
     </font>
    </property>
    <property name="layoutDirection">
@@ -191,6 +221,28 @@
    </property>
    <property name="text">
     <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="pre_desc_2">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>390</y>
+     <width>315</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
    </property>
   </widget>
  </widget>

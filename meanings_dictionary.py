@@ -139,16 +139,55 @@ all_full_dict = {'Fool': 'The Fool evokes an enormous burst of evergy. Wherever 
                                     'creation. Horizons open to him and he is able to take his wealth and make '
                                     'something new. Literally speaking he refers to a move or a journey - a shift in '
                                     'the physical which connects to ones spiritual and emotional world.',
-                 'Ace of Swords': 'A flash of insight, guidance to simplify the mind, cut the unnecessary',
-                 'Two of Swords': 'Daydreams, plans, information, theories overflowing',
-                 'Three of Swords': 'Discern between belief and knowing, too excitable, enthusiasm in learning',
-                 'Four of Swords': 'Good at life in general, practical but shuts out matters of the heart',
-                 'Five of Swords': 'False understanding of the world, dangerous polarizing, too enthusiastic',
-                 'Six of Swords': 'Attain beauty from within, meditate',
-                 'Seven of Swords': 'Lessons in receptivity, remove distractions',
-                 'Eight of Swords': 'Emptiness, the buddhist void',
-                 'Nine of Swords': 'Listen to others, there are other ideas than your own',
-                 'Ten of Swords': 'The mind has achieved unity, a full understanding',
+                 'Ace of Swords': 'A flash of insight, guidance to simplify the mind, cut the unnecessary. Great '
+                                  'intellectual potential and mental capacity (think ten of wands, which is heading '
+                                  'to meet this ace). This could indicate a great intellectual victory by using '
+                                  'discernment or cunning. It is a good time to decide or take a stance. Negatively '
+                                  'it warns of verbal abuse and hurt feelings as well as an overestimation of the '
+                                  'minds abilities.',
+                 'Two of Swords': 'Daydreams, plans, information and theories overflow. So many possibilities for '
+                                  'mental accomplishment are present but none have been acted on. The intellect '
+                                  'remains passive waiting for action. This can also indicate analysis paralysis. It '
+                                  'warns of foolishness, lazy thinking, paralyzing duality and a lack of focus. ',
+                 'Three of Swords': 'The mind is ready to burst forth and eager to learn. The urge to blurt out first '
+                                    'opinions is strong. The intellect is still immature here. The mind is spontaneous '
+                                    'and does not discern between believing and knowing. Literally this could signify '
+                                    'the desire to pass an exam or achieve some kind of intellectual growth. Beware of '
+                                    'fanaticism and abandon half-baked ideas. Be diligent in following up on worthy '
+                                    'ideas.',
+                 'Four of Swords': 'Finally ideas stabilize! Trust in your intellectual maturity. The need to keep'
+                                   ' thoughts to oneself may be present. A suppression of your ideas may '
+                                   'arise and there may be a lack of enthusiasm now. You are being practical but you '
+                                   'may be shutting out your heart. Negatively this warns of being too set in ones '
+                                   'thinking, the mind becoming a prisoner of its concepts, all bark and no bite and '
+                                   'in worst cases tyranny.',
+                 'Five of Swords': 'A new point of view allows for the understanding of others as well. It is time to '
+                                   'resume study, perfect your knowledge and become a specialist. New information '
+                                   'will help transform your daily life. Beware being a hypocrite, false understanding '
+                                   'of the world, and dangerous polarizing.',
+                 'Six of Swords': 'The first step into pure joy is taken. We love where our mind is and everything '
+                                  'feels like it is blossoming in finesse. Poetry finds its home here. Now is when we '
+                                  'meet someone whom offers enriching dialogue. Negatively be warned of self '
+                                  'confidence, neglecting to act on the idea of beauty, and narcissism. Attain beauty '
+                                  'from within, meditate',
+                 'Seven of Swords': 'The growth of our mental state nears its perfection and is receptive to '
+                                    'everything. This is a good time to move beyond the self and lend your mind to '
+                                    'the greater good. We are mature enough to move beyond the self successfully. '
+                                    'Negatively this warns of gossip, using knowledge for cynical purposes and '
+                                    'destructive ideas. Lessons in receptivity, remove distractions',
+                 'Eight of Swords': 'As with all eights we reach a stable perfection and for swords this means '
+                                    'emptiness. Great concentration comes easily, like a super power. Meditation '
+                                    'allows for the conflict of opposites to merge in celebration of the present. '
+                                    'All revelations are possible and answers to problems will come easily. Channel '
+                                    'the buddhist void',
+                 'Nine of Swords': 'This sword evokes illumination but there is more than meets the eye. Do not let '
+                                   'false understanding trick you into thinking you know more than others. it is time '
+                                   'to break old mental habits and let go. Listen to others, there are more ideas'
+                                   'other than your own. Negatively this speaks to fear of losing ones individuality, '
+                                   'depression or even a physical wound to the brain.',
+                 'Ten of Swords': 'The mind has achieved harmony with the heart, a full understanding is attained. '
+                                  'Beware emotional blocks or creating your own negative situations - your mind is '
+                                  'very powerful now.',
                  'Page of Swords': 'This Page possesses a good intellectual foundation but lacks self confidence. '
                                    'Perhaps he hasnt finished his education and must move forward with caution. '
                                    'Negatively he warns of lies, confusion, verbal fights and bad logic.',
@@ -163,17 +202,61 @@ all_full_dict = {'Fool': 'The Fool evokes an enormous burst of evergy. Wherever 
                                      'of thinking and seeks the way of the lovers, almost like a prophet. After '
                                      'achieving mental perfection he seeks only the paths that have heart now. He '
                                      'brings good news, solutions, and the end of mental conflicts.',
-                 'Ace of Cups': 'A gift of love given freely',
-                 'Two of Cups': 'Combining of opposite forces, love is blind',
-                 'Three of Cups': 'Divine love, honeymoon feelings',
-                 'Four of Cups': 'Seeking outer validation, insecure in love',
-                 'Five of Cups': 'Misunderstanding of love, cult like love',
-                 'Six of Cups': 'soul mates, potential narcissism, love reflecting what it sees, not honest',
-                 'Seven of Cups': 'Full manifestation of love',
-                 'Eight of Cups': 'Active towards earth receptive towards the heavens, perfect balance, perfect '
+                 'Ace of Cups': 'A gift of love given freely, the Ace of Cups is an overflowing chalice of love. This '
+                                'is a sign of great love which has not yet been employed and will color the rest of '
+                                'the reading. Negatively this could signify jealousy, never sated neediness, suffering '
+                                'or a lack of affection ',
+                 'Two of Cups': 'Emotionally immature we may be transfixed in a state of amorous daydreams. We seek '
+                                'the first signs of love from others. We may feel imprisoned by love in this stage '
+                                'and wait for an ideal mate who resembles us. We prepare for love but with great '
+                                'hesitation and sentimentality. Combining of opposite forces, love is blind here when '
+                                'it needs more experience. Negative aspects include, isolation, the inablity to '
+                                'establish relationships, immaturity and fear of commitment.',
+                 'Three of Cups': 'Divine love and honeymoon feelings give way to first love. The freshness and '
+                                  'inexperience and idealization of first love are all present here. The divine figure '
+                                  'makes an appearance here making everything feel blessed. Should this fail, terrible '
+                                  'disappointment awaits. In an intoxicated state we rediscover love at any age here. '
+                                  'Negatively we may be too fixated on love, destructive in our idealizations or '
+                                  'committed to impossible love.',
+                 'Four of Cups': 'Love is established and stable - we build the foundations for family in the four of '
+                                 'cups. With self confidence and trust love seems to be a practical pillar of our '
+                                 'reality. It can, however: morph into a seeking of security which puts us in danger '
+                                 'of entering a dominated and dominating relationship. The risk lies in expecting this '
+                                 'divinely guided decision making. Negatively this may speak to insecurity, '
+                                 'materialistic love, smothering or lack of freedom.',
+                 'Five of Cups': 'Misunderstanding love here, we run the risk of engaging in a cult like euphoria '
+                                 'which masks as love. we may discover faith and feel the need to put our loving '
+                                 'efforts into that which is for the better of humanity. This warns of blind trust, '
+                                 'emotional imbalance, a lack of faith, or disappointment.',
+                 'Six of Cups': 'That soul mate we dreamed of in the two of cups becomes a reality. We engage in the '
+                                'noblest form of self love and recognize the divine within ourselves. This is a card '
+                                'of reflection, not the three stacked cups mirroring itself. A relationship built on '
+                                'esteem and fidelity thirves. This warns of an overly pompous copule cutting '
+                                'themselves off from the world, withdrawal of the individual, potential narcissism, '
+                                'or self indulgence.',
+                 'Seven of Cups': 'We encounter a full manifestation of love and see this carried out in the world. '
+                                  'We may be charitable without advertising it and feel connected to collective hive '
+                                  'mind. We embrace the idea \"Nothing for me that is not for others\". negatively '
+                                  'this speaks to being unhappy due to evils of the world, aggressiveness or the '
+                                  'compulsive tendency to help others who have not requested it. This may also warn '
+                                  'of someone who is deeply self-cenetered.',
+                 'Eight of Cups': 'As we reach a state of perfect love we find we love the past, present, future, '
+                                  'the planet, ourselves, our neighbor, everything. There is no need to question love '
+                                  'here - love is everything. Gracefully we come into a profound unoin with the '
+                                  'divine. Become active towards earth and receptive towards the heavens. Negatively '
+                                  'we may revoke the acceptance of love, perpetually disatisfied or encounter a '
+                                  'strong love which seems to be giving but is really only taking.'
                                   'love, a full cup',
-                 'Nine of Cups': 'Release emotions which used to nourish, analyze your love',
-                 'Ten of Cups': 'Nothing for me that is not for others, full heart',
+                 'Nine of Cups': 'For the first time in the suit of cups we see leaves wilting. As we enter the '
+                                 'Autumn of the heart we must go through a period of grieving. In this mourning a '
+                                 'new dimension of love will appear. In our emotional wisdom it is time to accept '
+                                 'the end of a cycle and let go of what has already been lived. Release emotions '
+                                 'which used to nourish. Negative aspects include emotional crisis, nostalgia, '
+                                 'unwanted solitude, fear of lack and despair.',
+                 'Ten of Cups': 'At the height of our emotional maturity we seal our cups and get ready to put our '
+                                'love to work. This card will become the ace of pentacles and signifies a concrete '
+                                'action is ready to be taken. If negative at all this card warns of a refusal to '
+                                'evolve.',
                  'Page of Cups': 'To love or not to love? The Page of Cups is tempted and also terrified at the '
                                  'discovery of love. He represents first love full of doubts and enthusiasms. '
                                  'Potentially referring to someone who has not fully embraced oneself, he signifies a '

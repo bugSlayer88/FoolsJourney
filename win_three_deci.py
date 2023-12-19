@@ -2,22 +2,20 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtGui import QPixmap
 from PyQt6.QtWidgets import QMessageBox
 
-
 from win_three_meaning import Ui_ThreeExplainPopup
 
 import create_deck
-import create_tarot_deck
+
 import meanings_dictionary
-# from tarot_spreads.simple_three import SimpleThreeCard
+
 from tarot_spreads.simple_three_input import SimpleThreeCard
 
 main_meaning = meanings_dictionary.all_full_dict
 
-# tarot_spread = SimpleThreeCard()
-
 deck = create_deck.Deck()
-# deck = deck_redo.TarotDeck()
+
 cards = deck.list_cards()
+
 
 class Ui_ThreeDecipher(object):
     def setupUi(self, UiThreeDecipher):
@@ -169,20 +167,20 @@ class Ui_ThreeDecipher(object):
 
     def pas_combo_update(self):
         pas_selected = self.pas_combo.currentText()
-        pic_path = 'images/marseille/{}.png'.format(pas_selected.replace(" ","_"))
-        self.pas_card_img = QPixmap(pic_path).scaled(175,315)
+        pic_path = 'images/marseille/{}.png'.format(pas_selected.replace(" ", "_"))
+        self.pas_card_img = QPixmap(pic_path).scaled(175, 315)
         self.pas_img.setPixmap(self.pas_card_img)
 
     def pre_combo_update(self):
         pre_selected = self.pre_combo.currentText()
-        pic_path = 'images/marseille/{}.png'.format(pre_selected.replace(" ","_"))
-        self.pre_card_img = QPixmap(pic_path).scaled(175,315)
+        pic_path = 'images/marseille/{}.png'.format(pre_selected.replace(" ", "_"))
+        self.pre_card_img = QPixmap(pic_path).scaled(175, 315)
         self.pre_img.setPixmap(self.pre_card_img)
 
     def fut_combo_update(self):
         fut_selected = self.fut_combo.currentText()
-        pic_path = 'images/marseille/{}.png'.format(fut_selected.replace(" ","_"))
-        self.fut_card_img = QPixmap(pic_path).scaled(175,315)
+        pic_path = 'images/marseille/{}.png'.format(fut_selected.replace(" ", "_"))
+        self.fut_card_img = QPixmap(pic_path).scaled(175, 315)
         self.fut_img.setPixmap(self.fut_card_img)
 
     def read_summary(self):
@@ -191,7 +189,7 @@ class Ui_ThreeDecipher(object):
         future_card = self.fut_combo.currentText()
         print(future_card)
         # print(tarot_spread.quick_summary())
-        card_list = SimpleThreeCard(past_card,present_card,future_card)
+        card_list = SimpleThreeCard(past_card, present_card, future_card)
         print(card_list)
         summary = card_list.quick_summary(past_card, present_card, future_card)
         print(summary)
@@ -250,6 +248,7 @@ class Ui_ThreeDecipher(object):
 
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     UiThreeDecipher = QtWidgets.QWidget()
     ui = Ui_ThreeDecipher()

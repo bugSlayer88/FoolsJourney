@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file '.\win_single_deci.ui'
+# Form implementation generated from reading ui file '.\win_single_deci_02.ui'
 #
 # Created by: PyQt6 UI code generator 6.4.2
 #
@@ -9,51 +9,50 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 
 
-class Ui_Form(object):
-    def setupUi(self, Form):
-        Form.setObjectName("Form")
-        Form.resize(345, 550)
-        self.single_img_label = QtWidgets.QLabel(parent=Form)
-        self.single_img_label.setGeometry(QtCore.QRect(90, 40, 175, 315))
-        self.single_img_label.setText("")
-        self.single_img_label.setObjectName("single_img_label")
-        self.single_card_combo = QtWidgets.QComboBox(parent=Form)
-        self.single_card_combo.setGeometry(QtCore.QRect(90, 430, 175, 30))
+class Ui_SingleDecipher(object):
+    def setupUi(self, SingleDecipher):
+        SingleDecipher.setObjectName("SingleDecipher")
+        SingleDecipher.resize(340, 485)
+        self.card_img = QtWidgets.QLabel(parent=SingleDecipher)
+        self.card_img.setGeometry(QtCore.QRect(80, 30, 175, 315))
         font = QtGui.QFont()
-        font.setFamily("Adobe Hebrew")
-        font.setPointSize(20)
-        self.single_card_combo.setFont(font)
-        self.single_card_combo.setObjectName("single_card_combo")
-        self.decipher_btn = QtWidgets.QPushButton(parent=Form)
-        self.decipher_btn.setGeometry(QtCore.QRect(50, 480, 250, 35))
-        font = QtGui.QFont()
-        font.setFamily("Adobe Hebrew")
+        font.setFamily("Cormorant Infant SemiBold")
         font.setPointSize(16)
+        font.setBold(True)
+        self.card_img.setFont(font)
+        self.card_img.setText("")
+        self.card_img.setObjectName("card_img")
+        self.single_combo = QtWidgets.QComboBox(parent=SingleDecipher)
+        self.single_combo.setGeometry(QtCore.QRect(30, 380, 280, 26))
+        font = QtGui.QFont()
+        font.setFamily("Cormorant Infant SemiBold")
+        font.setPointSize(16)
+        font.setBold(True)
+        self.single_combo.setFont(font)
+        self.single_combo.setObjectName("single_combo")
+        self.decipher_btn = QtWidgets.QPushButton(parent=SingleDecipher)
+        self.decipher_btn.setGeometry(QtCore.QRect(70, 430, 200, 30))
+        font = QtGui.QFont()
+        font.setFamily("Cormorant Infant SemiBold")
+        font.setPointSize(16)
+        font.setBold(True)
         self.decipher_btn.setFont(font)
         self.decipher_btn.setObjectName("decipher_btn")
-        self.select_card_label = QtWidgets.QLabel(parent=Form)
-        self.select_card_label.setGeometry(QtCore.QRect(120, 390, 111, 30))
-        font = QtGui.QFont()
-        font.setFamily("Adobe Hebrew")
-        font.setPointSize(16)
-        self.select_card_label.setFont(font)
-        self.select_card_label.setObjectName("select_card_label")
 
-        self.retranslateUi(Form)
-        QtCore.QMetaObject.connectSlotsByName(Form)
+        self.retranslateUi(SingleDecipher)
+        QtCore.QMetaObject.connectSlotsByName(SingleDecipher)
 
-    def retranslateUi(self, Form):
+    def retranslateUi(self, SingleDecipher):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
-        self.decipher_btn.setText(_translate("Form", "Decipher Card"))
-        self.select_card_label.setText(_translate("Form", "Select Card:"))
+        SingleDecipher.setWindowTitle(_translate("SingleDecipher", "Form"))
+        self.decipher_btn.setText(_translate("SingleDecipher", "Show Explanation"))
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    Form = QtWidgets.QWidget()
-    ui = Ui_Form()
-    ui.setupUi(Form)
-    Form.show()
+    SingleDecipher = QtWidgets.QWidget()
+    ui = Ui_SingleDecipher()
+    ui.setupUi(SingleDecipher)
+    SingleDecipher.show()
     sys.exit(app.exec())

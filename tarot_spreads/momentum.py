@@ -1,6 +1,6 @@
 import random
 import create_deck
-import deck_redo
+import create_tarot_deck
 
 # deck = create_deck.Deck()
 deck = deck_redo.TarotDeck()

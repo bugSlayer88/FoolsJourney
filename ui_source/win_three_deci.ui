@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>707</width>
-    <height>559</height>
+    <height>505</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>90</y>
+     <y>60</y>
      <width>175</width>
      <height>315</height>
     </rect>
@@ -33,7 +33,7 @@
    <property name="geometry">
     <rect>
      <x>270</x>
-     <y>90</y>
+     <y>60</y>
      <width>175</width>
      <height>315</height>
     </rect>
@@ -49,7 +49,7 @@
    <property name="geometry">
     <rect>
      <x>480</x>
-     <y>90</y>
+     <y>60</y>
      <width>175</width>
      <height>315</height>
     </rect>
@@ -65,15 +65,16 @@
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>460</y>
+     <y>400</y>
      <width>175</width>
-     <height>30</height>
+     <height>26</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Adobe Hebrew</family>
-     <pointsize>20</pointsize>
+     <family>Cormorant Infant SemiBold</family>
+     <pointsize>16</pointsize>
+     <bold>true</bold>
     </font>
    </property>
   </widget>
@@ -81,15 +82,16 @@
    <property name="geometry">
     <rect>
      <x>270</x>
-     <y>460</y>
+     <y>400</y>
      <width>175</width>
-     <height>30</height>
+     <height>26</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Adobe Hebrew</family>
-     <pointsize>20</pointsize>
+     <family>Cormorant Infant SemiBold</family>
+     <pointsize>16</pointsize>
+     <bold>true</bold>
     </font>
    </property>
   </widget>
@@ -97,31 +99,33 @@
    <property name="geometry">
     <rect>
      <x>480</x>
-     <y>460</y>
+     <y>400</y>
      <width>175</width>
-     <height>30</height>
+     <height>26</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Adobe Hebrew</family>
-     <pointsize>20</pointsize>
+     <family>Cormorant Infant SemiBold</family>
+     <pointsize>16</pointsize>
+     <bold>true</bold>
     </font>
    </property>
   </widget>
   <widget class="QLabel" name="pas_label">
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>40</y>
-     <width>41</width>
-     <height>22</height>
+     <x>50</x>
+     <y>20</y>
+     <width>195</width>
+     <height>26</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Adobe Hebrew</family>
-     <pointsize>18</pointsize>
+     <family>Cormorant Infant SemiBold</family>
+     <pointsize>16</pointsize>
+     <bold>true</bold>
     </font>
    </property>
    <property name="layoutDirection">
@@ -130,20 +134,24 @@
    <property name="text">
     <string>Past</string>
    </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
   </widget>
   <widget class="QLabel" name="pres_label">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>40</y>
-     <width>81</width>
-     <height>22</height>
+     <x>260</x>
+     <y>20</y>
+     <width>195</width>
+     <height>26</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Adobe Hebrew</family>
-     <pointsize>18</pointsize>
+     <family>Cormorant Infant SemiBold</family>
+     <pointsize>16</pointsize>
+     <bold>true</bold>
     </font>
    </property>
    <property name="layoutDirection">
@@ -152,20 +160,24 @@
    <property name="text">
     <string>Present</string>
    </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
   </widget>
   <widget class="QLabel" name="fut_label">
    <property name="geometry">
     <rect>
-     <x>530</x>
-     <y>40</y>
-     <width>71</width>
-     <height>22</height>
+     <x>470</x>
+     <y>20</y>
+     <width>195</width>
+     <height>26</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Adobe Hebrew</family>
-     <pointsize>18</pointsize>
+     <family>Cormorant Infant SemiBold</family>
+     <pointsize>16</pointsize>
+     <bold>true</bold>
     </font>
    </property>
    <property name="layoutDirection">
@@ -174,24 +186,28 @@
    <property name="text">
     <string>Future</string>
    </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
   </widget>
   <widget class="QPushButton" name="decipher_btn">
    <property name="geometry">
     <rect>
      <x>179</x>
-     <y>510</y>
+     <y>450</y>
      <width>361</width>
-     <height>35</height>
+     <height>30</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Adobe Hebrew</family>
+     <family>Cormorant Infant SemiBold</family>
      <pointsize>16</pointsize>
+     <bold>true</bold>
     </font>
    </property>
    <property name="text">
-    <string>Decipher Cards</string>
+    <string>Show Explanation</string>
    </property>
   </widget>
  </widget>

@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file '.\win_single_read.ui'
+# Form implementation generated from reading ui file '.\win_single_read_02.ui'
 #
 # Created by: PyQt6 UI code generator 6.4.2
 #
@@ -12,43 +12,33 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_UiSingleReading(object):
     def setupUi(self, UiSingleReading):
         UiSingleReading.setObjectName("UiSingleReading")
-        UiSingleReading.resize(269, 558)
+        UiSingleReading.resize(340, 485)
+        self.decipher_btn = QtWidgets.QPushButton(parent=UiSingleReading)
+        self.decipher_btn.setGeometry(QtCore.QRect(70, 430, 200, 30))
+        font = QtGui.QFont()
+        font.setFamily("Cormorant Infant SemiBold")
+        font.setPointSize(16)
+        font.setBold(True)
+        self.decipher_btn.setFont(font)
+        self.decipher_btn.setObjectName("decipher_btn")
         self.card_img = QtWidgets.QLabel(parent=UiSingleReading)
-        self.card_img.setGeometry(QtCore.QRect(51, 50, 175, 315))
+        self.card_img.setGeometry(QtCore.QRect(80, 30, 175, 315))
+        font = QtGui.QFont()
+        font.setFamily("Cormorant Infant SemiBold")
+        font.setPointSize(16)
+        font.setBold(True)
+        self.card_img.setFont(font)
         self.card_img.setAutoFillBackground(True)
         self.card_img.setText("")
         self.card_img.setObjectName("card_img")
-        self.card_label = QtWidgets.QLabel(parent=UiSingleReading)
-        self.card_label.setGeometry(QtCore.QRect(80, 20, 121, 22))
+        self.draw_btn = QtWidgets.QPushButton(parent=UiSingleReading)
+        self.draw_btn.setGeometry(QtCore.QRect(30, 380, 280, 26))
         font = QtGui.QFont()
-        font.setFamily("Adobe Hebrew")
-        font.setPointSize(18)
-        self.card_label.setFont(font)
-        self.card_label.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
-        self.card_label.setObjectName("card_label")
-        self.card_btn = QtWidgets.QPushButton(parent=UiSingleReading)
-        self.card_btn.setGeometry(QtCore.QRect(50, 440, 175, 30))
-        font = QtGui.QFont()
-        font.setFamily("Adobe Hebrew")
-        font.setPointSize(12)
-        self.card_btn.setFont(font)
-        self.card_btn.setObjectName("card_btn")
-        self.card_title_label = QtWidgets.QLabel(parent=UiSingleReading)
-        self.card_title_label.setGeometry(QtCore.QRect(50, 390, 175, 22))
-        font = QtGui.QFont()
-        font.setFamily("Adobe Hebrew")
-        font.setPointSize(18)
-        self.card_title_label.setFont(font)
-        self.card_title_label.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
-        self.card_title_label.setText("")
-        self.card_title_label.setObjectName("card_title_label")
-        self.read_cards_btn = QtWidgets.QPushButton(parent=UiSingleReading)
-        self.read_cards_btn.setGeometry(QtCore.QRect(20, 490, 225, 30))
-        font = QtGui.QFont()
-        font.setFamily("Adobe Hebrew")
-        font.setPointSize(14)
-        self.read_cards_btn.setFont(font)
-        self.read_cards_btn.setObjectName("read_cards_btn")
+        font.setFamily("Cormorant Infant SemiBold")
+        font.setPointSize(16)
+        font.setBold(True)
+        self.draw_btn.setFont(font)
+        self.draw_btn.setObjectName("draw_btn")
 
         self.retranslateUi(UiSingleReading)
         QtCore.QMetaObject.connectSlotsByName(UiSingleReading)
@@ -56,9 +46,8 @@ class Ui_UiSingleReading(object):
     def retranslateUi(self, UiSingleReading):
         _translate = QtCore.QCoreApplication.translate
         UiSingleReading.setWindowTitle(_translate("UiSingleReading", "Form"))
-        self.card_label.setText(_translate("UiSingleReading", "Single Card"))
-        self.card_btn.setText(_translate("UiSingleReading", "Draw Card"))
-        self.read_cards_btn.setText(_translate("UiSingleReading", "Read My Card!"))
+        self.decipher_btn.setText(_translate("UiSingleReading", "Show Explanation"))
+        self.draw_btn.setText(_translate("UiSingleReading", "Draw Card"))
 
 
 if __name__ == "__main__":

@@ -10,12 +10,6 @@ major_arcanas = (
     'Hermit', 'Wheel of Fortune', 'Strength', 'Hanged Man', 'Death', 'Temperance', 'Devil', 'Tower', 'Star',
     'Moon', 'Sun', 'Judgement', 'World')
 
-# keywords_major = meanings_dictionary.major_key_dict
-# keywords_minor = meanings_dictionary.minor_key_dict
-#
-# main_meaning_minor = meanings_dictionary.minor_full_dict
-# main_meaning_major = meanings_dictionary.major_full_dict
-
 all_meanings = meanings_dictionary.all_full_dict
 
 suits_major = meanings_dictionary.major_suit_dict
@@ -30,7 +24,6 @@ class MinorCard():
         self.suit = suit
         self.rank = rank
         self.arcana_type = 'minor'
-        # self.keyword = keywords_minor[rank]
         self.meaning = all_meanings[rank + ' of ' + suit]
         self.modality_type = modality_type[suit]
 
@@ -39,9 +32,6 @@ class MinorCard():
 
     def arcana(self):
         return self.arcana_type
-
-    # def general_meaning(self):
-    #     return self.meaning
 
     def main_meaning(self):
         return self.meaning
@@ -54,7 +44,6 @@ class MajorCard():
 
     def __init__(self, major_arcana):
         self.major_arcana = major_arcana
-        # self.keyword = keywords_major[major_arcana]
         self.meaning = all_meanings[major_arcana]
         self.arcana_type = 'major'
         self.suit = suits_major[major_arcana]
@@ -66,9 +55,6 @@ class MajorCard():
 
     def arcana(self):
         return self.arcana_type
-
-    # def general_meaning(self):
-    #     return self.keyword
 
     def main_meaning(self):
         return self.meaning
@@ -101,11 +87,9 @@ class Deck():
         return single_card
 
     def list_cards(self):
-        # all_cards = []
-        # for card in self.deck:
-        #     all_cards = str(card)
-        # return all_cards
         deck_compile_list = ''
         for card in self.deck:
             deck_compile_list += card.__str__() + ','
-        return deck_compile_list.split(',')
+            card_list = deck_compile_list[: len(deck_compile_list) - 1]
+        return card_list.split(',')
+
