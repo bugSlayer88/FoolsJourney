@@ -1,4 +1,4 @@
-all_full_dict = {'Fool': 'The Fool evokes an enormous burst of evergy. Wherever he goes he brings this vital  '
+all_full_dict = {'Fool': 'The Fool evokes an enormous burst of energy. Wherever he goes he brings this vital  '
                          'impulse. Charge forward!',
                  'Magician': 'A new beginning opens up to you. Make reasoning quick and set your focus. Make your '
                              'decisions and take action.',
@@ -205,12 +205,12 @@ all_full_dict = {'Fool': 'The Fool evokes an enormous burst of evergy. Wherever 
                  'Ace of Cups': 'A gift of love given freely, the Ace of Cups is an overflowing chalice of love. This '
                                 'is a sign of great love which has not yet been employed and will color the rest of '
                                 'the reading. Negatively this could signify jealousy, never sated neediness, suffering '
-                                'or a lack of affection ',
+                                'or a lack of affection.',
                  'Two of Cups': 'Emotionally immature we may be transfixed in a state of amorous daydreams. We seek '
                                 'the first signs of love from others. We may feel imprisoned by love in this stage '
                                 'and wait for an ideal mate who resembles us. We prepare for love but with great '
                                 'hesitation and sentimentality. Combining of opposite forces, love is blind here when '
-                                'it needs more experience. Negative aspects include, isolation, the inablity to '
+                                'it needs more experience. Negative aspects include, isolation, the inability to '
                                 'establish relationships, immaturity and fear of commitment.',
                  'Three of Cups': 'Divine love and honeymoon feelings give way to first love. The freshness and '
                                   'inexperience and idealization of first love are all present here. The divine figure '
@@ -230,8 +230,8 @@ all_full_dict = {'Fool': 'The Fool evokes an enormous burst of evergy. Wherever 
                                  'emotional imbalance, a lack of faith, or disappointment.',
                  'Six of Cups': 'That soul mate we dreamed of in the two of cups becomes a reality. We engage in the '
                                 'noblest form of self love and recognize the divine within ourselves. This is a card '
-                                'of reflection, not the three stacked cups mirroring itself. A relationship built on '
-                                'esteem and fidelity thirves. This warns of an overly pompous copule cutting '
+                                'of reflection, note the three stacked cups mirroring itself. A relationship built on '
+                                'esteem and fidelity thrives. This warns of an overly pompous couple cutting '
                                 'themselves off from the world, withdrawal of the individual, potential narcissism, '
                                 'or self indulgence.',
                  'Seven of Cups': 'We encounter a full manifestation of love and see this carried out in the world. '
@@ -239,12 +239,12 @@ all_full_dict = {'Fool': 'The Fool evokes an enormous burst of evergy. Wherever 
                                   'mind. We embrace the idea \"Nothing for me that is not for others\". negatively '
                                   'this speaks to being unhappy due to evils of the world, aggressiveness or the '
                                   'compulsive tendency to help others who have not requested it. This may also warn '
-                                  'of someone who is deeply self-cenetered.',
+                                  'of someone who is deeply self-centered.',
                  'Eight of Cups': 'As we reach a state of perfect love we find we love the past, present, future, '
                                   'the planet, ourselves, our neighbor, everything. There is no need to question love '
-                                  'here - love is everything. Gracefully we come into a profound unoin with the '
+                                  'here - love is everything. Gracefully we come into a profound union with the '
                                   'divine. Become active towards earth and receptive towards the heavens. Negatively '
-                                  'we may revoke the acceptance of love, perpetually disatisfied or encounter a '
+                                  'we may revoke the acceptance of love, perpetually dissatisfied or encounter a '
                                   'strong love which seems to be giving but is really only taking.'
                                   'love, a full cup',
                  'Nine of Cups': 'For the first time in the suit of cups we see leaves wilting. As we enter the '
