@@ -97,7 +97,7 @@ all_full_dict = {'Fool': 'The Fool evokes an enormous burst of energy. Wherever 
                                  'unrealistic view of the world.',
                  'Three of Coins': 'Investments produce their first returns or losses. There is a certain risk at '
                                    'play here. negatively beware of fertility issues and creating a monster.',
-                 'Four of Coins': 'The cycle of death and rebirth is constant. The body and the home similarily '
+                 'Four of Coins': 'The cycle of death and rebirth is constant. The body and the home similarly '
                                   'require constant upkeep. Do not allow things to stagnate. It is time to commit to '
                                   'action or lose progress, spend!',
                  'Five of Coins': 'We go from the comfort of the security in the Four of Pentacles to the desire for '
