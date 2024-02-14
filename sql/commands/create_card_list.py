@@ -1,4 +1,5 @@
-('Fool'), 
+# card list names for syntax
+('Fool'),
 ('Magician'), 
 ('High Priestess'),
 ('Empress'),

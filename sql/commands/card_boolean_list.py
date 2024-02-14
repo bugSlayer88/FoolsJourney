@@ -1,4 +1,5 @@
-'Fool' = 'True', 
+# trying to figure out how to log readings in a table so i can use them in mayplotlib
+'Fool' = 'True',
 'Magician' = 'True', 
 'High Priestess' = 'True',
 'Empress' = 'True',
