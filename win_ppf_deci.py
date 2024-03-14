@@ -2,15 +2,13 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtGui import QPixmap
 from PyQt6.QtWidgets import QMessageBox
 
-from win_three_meaning import Ui_ThreeExplainPopup
+from win_ppf_meaning import Ui_ThreeExplainPopup
 
 import create_deck
 
-import meanings_dictionary
+from card_analyzer import get_general_meaning, get_negative_meaning
 
 from tarot_spreads.simple_three_input import SimpleThreeCard
-
-main_meaning = meanings_dictionary.all_full_dict
 
 deck = create_deck.Deck()
 
@@ -220,20 +218,35 @@ class Ui_ThreeDecipher(object):
             self.ui.fut_card_title.setText(fut_card_selected)
             self.ui.fut_card_title.setWordWrap(True)
 
-            get_pas_meaning = main_meaning[str(pas_card_selected)]
+            get_pas_meaning = get_general_meaning(str(pas_card_selected))
 
             self.ui.pas_desc.setText(get_pas_meaning)
             self.ui.pas_desc.setWordWrap(True)
 
-            get_pre_meaning = main_meaning[str(pre_card_selected)]
+            get_pas_neg_meaning = get_negative_meaning(str(pas_card_selected))
+
+            self.ui.pas_neg_desc.setText(get_pas_neg_meaning)
+            self.ui.pas_neg_desc.setWordWrap(True)
+
+            get_pre_meaning = get_general_meaning(str(pre_card_selected))
 
             self.ui.pre_desc.setText(get_pre_meaning)
             self.ui.pre_desc.setWordWrap(True)
 
-            get_fut_meaning = main_meaning[str(fut_card_selected)]
+            get_pre_neg_meaning = get_negative_meaning(str(pre_card_selected))
+
+            self.ui.pre_neg_desc.setText(get_pre_neg_meaning)
+            self.ui.pre_neg_desc.setWordWrap(True)
+
+            get_fut_meaning = get_general_meaning(str(fut_card_selected))
 
             self.ui.fut_desc.setText(get_fut_meaning)
             self.ui.fut_desc.setWordWrap(True)
+
+            get_fut_neg_meaning = get_negative_meaning(str(fut_card_selected))
+
+            self.ui.fut_neg_desc.setText(get_fut_neg_meaning)
+            self.ui.fut_neg_desc.setWordWrap(True)
 
             self.window.show()
 

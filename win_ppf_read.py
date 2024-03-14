@@ -8,7 +8,7 @@ import create_deck
 import meanings_dictionary
 from tarot_spreads.simple_three import SimpleThreeCard
 
-from win_three_meaning import Ui_ThreeExplainPopup
+from win_ppf_meaning import Ui_ThreeExplainPopup
 
 image_dir = 'images/marseille'
 
@@ -196,6 +196,8 @@ class Ui_ThreeReading(object):
         pas_drawn = self.pas_btn.text()
         pre_drawn = self.pre_btn.text()
         fut_drawn = self.fut_btn.text()
+
+        print('checking this is the button')
 
         if pas_drawn == 'Draw Card' or pre_drawn == 'Draw Card' or fut_drawn == 'Draw Card':
             msg = QMessageBox()
