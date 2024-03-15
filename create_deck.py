@@ -93,3 +93,10 @@ class Deck():
             card_list = deck_compile_list[: len(deck_compile_list) - 1]
         return card_list.split(',')
 
+
+# class CardDetails:
+#     def __init__(self,card):
+#         self.card = card
+#
+#     def arcana_type(self):
+#         if self.card in

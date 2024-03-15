@@ -1,16 +1,18 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 
-from win_three_deci import Ui_ThreeDecipher
+from win_ppf_deci import Ui_ThreeDecipher
 from win_single_deci import Ui_SingleDecipher
 from win_quick_focus_deci import Ui_QuickFocusDecipher
+from win_two_deci import Ui_SingleTwoDecipher
+from win_three_deci import Ui_SingleThreeDecipher
 # from win_celtic_deci import Ui_CelticDecipher
 
 from win_single_read import Ui_SingleReading
-from win_three_read import Ui_ThreeReading
+from win_ppf_read import Ui_ThreeReading
 from win_quick_focus_read import Ui_QuickFocusReading
 # from win_celtic_read import Ui_CelticReading
 
-spreads = ['Single Card', 'Classic Three Cards', 'Quick Focus']
+spreads = ['Single Card', 'Two Cards', 'Three Cards', 'Classic Three Cards', 'Quick Focus']
 
 class Ui_MainLaunchWindow(object):
     def setupUi(self, MainLaunchWindow):
@@ -112,6 +114,10 @@ class Ui_MainLaunchWindow(object):
             self.ui = Ui_ThreeDecipher()
         if spread_selected == "Single Card" and self.dec_opt_radio.isChecked():
             self.ui = Ui_SingleDecipher()
+        if spread_selected == "Two Cards" and self.dec_opt_radio.isChecked():
+            self.ui = Ui_SingleTwoDecipher()
+        if spread_selected == "Three Cards" and self.dec_opt_radio.isChecked():
+            self.ui = Ui_SingleThreeDecipher()
         if spread_selected == "Quick Focus" and self.dec_opt_radio.isChecked():
             self.ui = Ui_QuickFocusDecipher()
 

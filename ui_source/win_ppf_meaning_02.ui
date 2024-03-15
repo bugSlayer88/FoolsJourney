@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>ThreeSingleMeaning</class>
- <widget class="QWidget" name="ThreeSingleMeaning">
+ <class>ThreeDecipher</class>
+ <widget class="QWidget" name="ThreeDecipher">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -13,7 +13,33 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="std_label">
+  <widget class="QLabel" name="pas_label">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>20</y>
+     <width>195</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cormorant Infant SemiBold</family>
+     <pointsize>16</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="text">
+    <string>Past</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="pre_label">
    <property name="geometry">
     <rect>
      <x>240</x>
@@ -33,13 +59,39 @@
     <enum>Qt::LeftToRight</enum>
    </property>
    <property name="text">
-    <string>Standard Meanings</string>
+    <string>Present</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="card_01_desc">
+  <widget class="QLabel" name="fut_label">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>20</y>
+     <width>195</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cormorant Infant SemiBold</family>
+     <pointsize>16</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="text">
+    <string>Future</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="pas_desc">
    <property name="geometry">
     <rect>
      <x>40</x>
@@ -58,7 +110,7 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="card_02_desc">
+  <widget class="QLabel" name="pre_desc">
    <property name="geometry">
     <rect>
      <x>250</x>
@@ -77,7 +129,7 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="card_03_desc">
+  <widget class="QLabel" name="fut_desc">
    <property name="geometry">
     <rect>
      <x>460</x>
@@ -96,7 +148,7 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="card_02_title">
+  <widget class="QLabel" name="pre_card_title">
    <property name="geometry">
     <rect>
      <x>240</x>
@@ -122,7 +174,7 @@
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="card_01_title">
+  <widget class="QLabel" name="pas_card_title">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -148,7 +200,7 @@
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="card_03_title">
+  <widget class="QLabel" name="fut_card_title">
    <property name="geometry">
     <rect>
      <x>450</x>
@@ -174,7 +226,7 @@
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="card_01_neg_desc">
+  <widget class="QLabel" name="pas_neg_desc">
    <property name="geometry">
     <rect>
      <x>40</x>
@@ -193,7 +245,7 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="card_02_neg_desc">
+  <widget class="QLabel" name="pre_neg_desc">
    <property name="geometry">
     <rect>
      <x>250</x>
@@ -212,11 +264,11 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="card_03_neg_desc">
+  <widget class="QLabel" name="fut_neg_desc">
    <property name="geometry">
     <rect>
-     <x>480</x>
-     <y>330</y>
+     <x>460</x>
+     <y>320</y>
      <width>175</width>
      <height>140</height>
     </rect>
@@ -231,7 +283,33 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="neg_label">
+  <widget class="QLabel" name="pas_neg">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>260</y>
+     <width>191</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cormorant Infant SemiBold</family>
+     <pointsize>16</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="text">
+    <string>Negatives</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="pre_neg">
    <property name="geometry">
     <rect>
      <x>240</x>
@@ -251,7 +329,33 @@
     <enum>Qt::LeftToRight</enum>
    </property>
    <property name="text">
-    <string>Negatives Meanings</string>
+    <string>Negatives</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="fut_neg">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>260</y>
+     <width>191</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cormorant Infant SemiBold</family>
+     <pointsize>16</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="text">
+    <string>Negatives</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>

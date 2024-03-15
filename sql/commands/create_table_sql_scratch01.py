@@ -1,17 +1,17 @@
-# figuring out how to best do this table:
-CREATE TABLE card_meaning (
-    card_id SERIAL PRIMARY KEY,
-	card varchar(100),
-	base_meaning varchar(800),
-    negative_meaning varchar(800),
-	major_arcana boolean,
-	minor_arcana boolean,
-	court_card boolean
-);
-
-# update table with info:
-INSERT INTO card_meaning(card, base_meaning, negative_meaning, major_arcana, minor_arcana, court_card)
-VALUES
+# # figuring out how to best do this table:
+# CREATE TABLE card_meaning (
+#     card_id SERIAL PRIMARY KEY,
+# 	card varchar(100),
+# 	base_meaning varchar(800),
+#     negative_meaning varchar(800),
+# 	major_arcana boolean,
+# 	minor_arcana boolean,
+# 	court_card boolean
+# );
+#
+# # update table with info:
+# INSERT INTO card_meaning(card, base_meaning, negative_meaning, major_arcana, minor_arcana, court_card)
+# VALUES
 
 ('Fool', 'The Fool evokes an enormous burst of energy. Wherever he goes he brings this vital impulse. Charge forward and let your worries go, trust in the universe and take the plunge.', 'A sense of inconsistency and madness is present. The Fool moves forward regardless of the journey, make sure your efforts are worthy.', 'True', 'False', 'False'),
 ('Magician', 'A new beginning opens up to you. Make reasoning quick and set your focus. Make your decisions and take action.', 'Beware immaturity and let go of the idea that everything is possible. It is time to make a decision and commit.', 'True', 'False', 'False'),
@@ -95,4 +95,70 @@ VALUES
 ('Queen of Coins', 'Clinging to her money, position, health - she could deploy immense energy to keep things as they are. Whatever her situation needs she will make it happen.', 'She runs the risk of not looking beyond herself and ignoring the bigger picture to obtain what she seeks in the immediate. A fear of risk keeps us trapped.', 'False', 'True', 'True'),
 ('King of Coins', 'With no crown but a hat - this man knows how to make his money work for him while maintaining a spiritual connection to the Earth. His throne is outside in nature. A billionaire or a farmer he has mastered his material world.', 'Negatively he warns of fraud dirty money, bad stocks or a dealer of toxic goods', 'False', 'True', 'True'),
 ('Knight of Coins', 'This Knight marches beyond the superficial materials of existence and into creation. Horizons open to him and he is able to take his wealth and make something new. Literally speaking he refers to a move or a journey - a shift in the physical which connects to ones spiritual and emotional world.', 'No negatives', 'False', 'True', 'True');
+
+# card = 'Queen of Wands' or card = 'Queen of Swords' or card = 'Five of Cups' or card = 'Fool' or card = 'Nine of Swords' or card = 'Two of Coins' or card = 'Moon' or card = 'Seven of Wands' or card = 'World' or card = 'Nine of Coins' or card = 'Seven of Cups' or card = 'Four of Swords' or card = 'Five of Wands' or card = 'Ace of Coins' or card = 'Hermit' or card = 'Ten of Cups' or card = 'Tower'
+#
+# card = 'King of Wands' or card = 'Seven of Swords' or card = 'Hermit' or card = 'Ace of Cups' or card = 'Two of Swords' or card = 'Six of Cups' or card = 'Seven of Wands' or card = 'Eight of Coins' or card = 'Three of Swords' or card = 'Four of Coins' or card = 'Eight of Swords' or card = 'Five of Swords' or card = 'Seven of Cups' or card = 'Two of Coins' or card = 'Knight of Coins' or card = 'Knight of Cups' or card = 'Tower' or card = 'Judgement' or card = 'Moon'
+#
+# card = 'Empress' or card = 'Seven of Wands' or card = 'Six of Wands' or card = 'Chariot' or card = 'Three of Coins' or card = 'Ten of Swords' or card = 'Knight of Wands' or card = 'Star' or card = 'King of Cups' or card = 'Moon' or card = 'Magician' or card = 'Knight of Coins' or card = 'Ace of Coins' or card = 'Nine of Cups' or card = 'Three of Cups' or card = 'Devil'
+#
+# card = 'Knight of Cups' or card = 'Five of Pentacles' or card = 'Queen of Cups' or card = 'Ace of Coins' or card = 'Two of Cups' or card = 'Four of Swords' or card = 'Seven of Coins' or card = 'Queen of Wands' or card = 'Temperance' or card = 'Lovers' or card = 'Page of Swords' or card = 'Judgement' or card = 'Four of Coins' or card = 'Eight of Cups' or card = 'Ten of Cups' or card = 'Four of Cups'
+#
+# card = 'Five of Cups' or card = 'Six of Cups' or card = 'Ace of Wands' or card = 'Nine of Swords' or card = 'Three of Wands' or card = 'Moon' or card = 'Emperor' or card = 'Hanged Man' or card = 'Two of Coins' or card = 'King of Coins' or card = 'Hermit' or card = 'Ten of Wands' or card = 'Ten of Coins' or card = 'High Priestess' or card = 'Magician' or card = 'Queen of Swords'
+#
+# 'Temperance' 'Death' 'Wheel of Fortune' 'Nine of Swords'
+# 'Ten of Swords'
+# 'Page of Swords'
+# 'Queen of Swords'
+
+
+# CREATE TABLE read_16 (
+#     reading_id SERIAL PRIMARY KEY,
+#     card_01 varchar(100),
+#     card_02 varchar(100),
+#     card_03 varchar(100),
+#     card_04 varchar(100),
+#     card_05 varchar(100),
+#     card_06 varchar(100),
+#     card_07 varchar(100),
+#     card_08 varchar(100),
+#     card_09 varchar(100),
+#     card_10 varchar(100),
+#     card_11 varchar(100),
+#     card_12 varchar(100),
+#     card_13 varchar(100),
+#     card_14 varchar(100),
+#     card_15 varchar(100),
+#     card_16 varchar(100),
+#     card_ex1 varchar(100),
+#     card_ex2 varchar(100),
+#     card_ex3 varchar(100)
+# )
+#
+# INSERT INTO read_16(card_01, card_02, card_03, card_04, card_05, card_06, card_07, card_08, card_09, card_10, card_11, card_12, card_13, card_14, card_15, card_16, card_ex1)
+# values
+#
+# ('Queen of Wands', 'Queen of Swords', 'Five of Cups', 'Fool', 'Nine of Swords', 'Two of Coins', 'Moon', 'Seven of Wands', 'World', 'Nine of Coins', 'Seven of Cups', 'Four of Swords', 'Five of Wands', 'Ace of Coins', 'Hermit', 'Ten of Cups', 'Tower')
+#
+# INSERT INTO read_16(card_01, card_02, card_03, card_04, card_05, card_06, card_07, card_08, card_09, card_10, card_11, card_12, card_13, card_14, card_15, card_16, card_ex1, card_ex2, card_ex3)
+# values
+#
+# ('King of Wands', 'Seven of Swords', 'Hermit', 'Ace of Cups', 'Two of Swords', 'Six of Cups', 'Seven of Wands', 'Eight of Coins', 'Three of Swords', 'Four of Coins', 'Eight of Swords', 'Five of Swords', 'Seven of Cups', 'Two of Coins', 'Knight of Coins', 'Knight of Cups', 'Tower', 'Judgement', 'Moon')
+#
+# INSERT INTO read_16(card_01, card_02, card_03, card_04, card_05, card_06, card_07, card_08, card_09, card_10, card_11, card_12, card_13, card_14, card_15, card_16)
+# values
+# ('Empress', 'Seven of Wands', 'Six of Wands', 'Chariot', 'Three of Coins', 'Ten of Swords', 'Knight of Wands', 'Star', 'King of Cups', 'Moon', 'Magician', 'Knight of Coins', 'Ace of Coins', 'Nine of Cups', 'Three of Cups', 'Devil'),
+# ('Knight of Cups', 'Five of Pentacles', 'Queen of Cups', 'Ace of Coins', 'Two of Cups', 'Four of Swords', 'Seven of Coins', 'Queen of Wands', 'Temperance', 'Lovers', 'Page of Swords', 'Judgement', 'Four of Coins', 'Eight of Cups', 'Ten of Cups', 'Four of Cups')
+#
+# ('Five of Cups', 'Six of Cups', 'Ace of Wands', 'Nine of Swords', 'Three of Wands', 'Moon', 'Emperor', 'Hanged Man', 'Two of Coins', 'King of Coins', 'Hermit', 'Ten of Wands', 'Ten of Coins', 'High Priestess', 'Magician', 'Queen of Swords')
+#
+#
+# CREATE TABLE read_01 (
+#     spd_01 boolean,
+#     spd_02 boolean,
+#     spd_03 boolean,
+#     spd_04 boolean,
+#     spd_05 boolean
+# ) INHERITS card_meaning;
+#
 

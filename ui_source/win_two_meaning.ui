@@ -1,49 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>ThreeSingleMeaning</class>
- <widget class="QWidget" name="ThreeSingleMeaning">
+ <class>TwoSingleMeaning</class>
+ <widget class="QWidget" name="TwoSingleMeaning">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>674</width>
-    <height>502</height>
+    <width>427</width>
+    <height>508</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="std_label">
-   <property name="geometry">
-    <rect>
-     <x>240</x>
-     <y>20</y>
-     <width>195</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Cormorant Infant SemiBold</family>
-     <pointsize>16</pointsize>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="layoutDirection">
-    <enum>Qt::LeftToRight</enum>
-   </property>
-   <property name="text">
-    <string>Standard Meanings</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
   <widget class="QLabel" name="card_01_desc">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>110</y>
+     <x>20</x>
+     <y>100</y>
      <width>175</width>
      <height>140</height>
     </rect>
@@ -56,77 +30,13 @@
    </property>
    <property name="wordWrap">
     <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="card_02_desc">
-   <property name="geometry">
-    <rect>
-     <x>250</x>
-     <y>110</y>
-     <width>175</width>
-     <height>140</height>
-    </rect>
-   </property>
-   <property name="autoFillBackground">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="wordWrap">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="card_03_desc">
-   <property name="geometry">
-    <rect>
-     <x>460</x>
-     <y>110</y>
-     <width>175</width>
-     <height>140</height>
-    </rect>
-   </property>
-   <property name="autoFillBackground">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="wordWrap">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="card_02_title">
-   <property name="geometry">
-    <rect>
-     <x>240</x>
-     <y>60</y>
-     <width>195</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Cormorant Infant SemiBold</family>
-     <pointsize>16</pointsize>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="layoutDirection">
-    <enum>Qt::LeftToRight</enum>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
    </property>
   </widget>
   <widget class="QLabel" name="card_01_title">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>60</y>
+     <x>10</x>
+     <y>50</y>
      <width>195</width>
      <height>26</height>
     </rect>
@@ -148,11 +58,11 @@
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="card_03_title">
+  <widget class="QLabel" name="card_02_title">
    <property name="geometry">
     <rect>
-     <x>450</x>
-     <y>60</y>
+     <x>220</x>
+     <y>50</y>
      <width>195</width>
      <height>26</height>
     </rect>
@@ -177,8 +87,27 @@
   <widget class="QLabel" name="card_01_neg_desc">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>320</y>
+     <x>20</x>
+     <y>310</y>
+     <width>175</width>
+     <height>140</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="card_02_desc">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>100</y>
      <width>175</width>
      <height>140</height>
     </rect>
@@ -196,8 +125,8 @@
   <widget class="QLabel" name="card_02_neg_desc">
    <property name="geometry">
     <rect>
-     <x>250</x>
-     <y>320</y>
+     <x>230</x>
+     <y>310</y>
      <width>175</width>
      <height>140</height>
     </rect>
@@ -212,30 +141,37 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="card_03_neg_desc">
+  <widget class="QLabel" name="std_label">
    <property name="geometry">
     <rect>
-     <x>480</x>
-     <y>330</y>
-     <width>175</width>
-     <height>140</height>
+     <x>120</x>
+     <y>10</y>
+     <width>195</width>
+     <height>26</height>
     </rect>
    </property>
-   <property name="autoFillBackground">
-    <bool>true</bool>
+   <property name="font">
+    <font>
+     <family>Cormorant Infant SemiBold</family>
+     <pointsize>16</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
    </property>
    <property name="text">
-    <string/>
+    <string>Standard Meanings</string>
    </property>
-   <property name="wordWrap">
-    <bool>true</bool>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
   <widget class="QLabel" name="neg_label">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>260</y>
+     <x>120</x>
+     <y>250</y>
      <width>191</width>
      <height>26</height>
     </rect>

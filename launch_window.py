@@ -1,11 +1,11 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 
-from win_three_deci import Ui_ThreeDecipher
+from win_ppf_deci import Ui_ThreeDecipher
 from win_single_deci import UiSingleDecipher
 from win_celtic_deci import Ui_CelticDecipher
 
 from win_single_read import Ui_SingleReading
-from win_three_read import Ui_ThreeReading
+from win_ppf_read import Ui_ThreeReading
 from win_celtic_read import Ui_CelticReading
 
 spreads = ['Single Card', 'Simple Three Cards', 'Celtic Cross']
