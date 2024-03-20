@@ -6,6 +6,7 @@ from win_two_meaning import Ui_TwoSingleMeaning
 
 import create_deck
 from card_analyzer import get_general_meaning, get_negative_meaning
+from card_summary import build_card_list, get_majors, get_minors, get_aces
 
 deck = create_deck.Deck()
 
@@ -53,6 +54,7 @@ class Ui_SingleTwoDecipher(object):
         self.decipher_btn.setObjectName("decipher_btn")
 
         self.decipher_btn.clicked.connect(self.launch_decipher_window)
+        self.decipher_btn.clicked.connect(self.run_summary)
 
         self.single_combo_02 = QtWidgets.QComboBox(parent=TwoDecipher)
         self.single_combo_02.setGeometry(QtCore.QRect(350, 380, 280, 26))
@@ -93,6 +95,19 @@ class Ui_SingleTwoDecipher(object):
         pic_path = 'images/marseille/{}.png'.format(card02_selected.replace(" ", "_"))
         self.card_02_img = QPixmap(pic_path).scaled(175,315)
         self.card_img_02.setPixmap(self.card_02_img)
+
+    def run_summary(self):
+        card01_selected = self.single_combo_01.currentText()
+        card02_selected = self.single_combo_02.currentText()
+        cards_pulled = [card01_selected, card02_selected]
+        print(cards_pulled)
+
+        cards_pulled_list = build_card_list(cards_pulled)
+
+        majors_count = get_majors(cards_pulled_list)
+        minors_count = get_minors(cards_pulled_list)
+        aces_count = get_aces(cards_pulled_list)
+
 
     def launch_decipher_window(self):
         self.window = QtWidgets.QWidget()
