@@ -6,7 +6,8 @@ from win_two_meaning import Ui_TwoSingleMeaning
 
 import create_deck
 from card_analyzer import get_general_meaning, get_negative_meaning
-from card_summary import build_card_list, get_majors, get_minors, get_aces
+from card_summary import build_card_list, get_majors, get_minors, get_aces, get_kings, get_knights, get_queens, get_pages, get_courts
+from win_simple_summary import Ui_SimpleSummary
 
 deck = create_deck.Deck()
 
@@ -45,7 +46,7 @@ class Ui_SingleTwoDecipher(object):
         self.single_combo_01.currentTextChanged.connect(self.card01_combo_update)
 
         self.decipher_btn = QtWidgets.QPushButton(parent=TwoDecipher)
-        self.decipher_btn.setGeometry(QtCore.QRect(230, 430, 200, 30))
+        self.decipher_btn.setGeometry(QtCore.QRect(130, 430, 200, 30))
         font = QtGui.QFont()
         font.setFamily("Cormorant Infant SemiBold")
         font.setPointSize(16)
@@ -54,7 +55,17 @@ class Ui_SingleTwoDecipher(object):
         self.decipher_btn.setObjectName("decipher_btn")
 
         self.decipher_btn.clicked.connect(self.launch_decipher_window)
-        self.decipher_btn.clicked.connect(self.run_summary)
+
+        self.summary_btn = QtWidgets.QPushButton(parent=TwoDecipher)
+        self.summary_btn.setGeometry(QtCore.QRect(350, 430, 200, 30))
+        font = QtGui.QFont()
+        font.setFamily("Cormorant Infant SemiBold")
+        font.setPointSize(16)
+        font.setBold(True)
+        self.summary_btn.setFont(font)
+        self.summary_btn.setObjectName("summary_btn")
+
+        self.summary_btn.clicked.connect(self.get_summary)
 
         self.single_combo_02 = QtWidgets.QComboBox(parent=TwoDecipher)
         self.single_combo_02.setGeometry(QtCore.QRect(350, 380, 280, 26))
@@ -96,18 +107,36 @@ class Ui_SingleTwoDecipher(object):
         self.card_02_img = QPixmap(pic_path).scaled(175,315)
         self.card_img_02.setPixmap(self.card_02_img)
 
-    def run_summary(self):
-        card01_selected = self.single_combo_01.currentText()
-        card02_selected = self.single_combo_02.currentText()
-        cards_pulled = [card01_selected, card02_selected]
-        print(cards_pulled)
 
-        cards_pulled_list = build_card_list(cards_pulled)
+    def get_summary(self):
+        self.window = QtWidgets.QWidget()
+        self.summary_ui = Ui_SimpleSummary()
+        self.summary_ui.setupUi(self.window)
 
-        majors_count = get_majors(cards_pulled_list)
-        minors_count = get_minors(cards_pulled_list)
-        aces_count = get_aces(cards_pulled_list)
+        card_01_selected = self.single_combo_01.currentText()
+        card_02_selected = self.single_combo_02.currentText()
 
+        cards_pulled = [card_01_selected, card_02_selected]
+        build_list = build_card_list(cards_pulled)
+        majors_count = get_majors(build_list)
+        minors_count = get_minors(build_list)
+        courts_count = get_courts(build_list)
+        knights_count = get_knights(build_list)
+        kings_count = get_kings(build_list)
+        queens_count = get_queens(build_list)
+        pages_count = get_pages(build_list)
+        aces_count = get_aces(build_list)
+
+        self.summary_ui.mjr_amt_lbl.setText(str(len(majors_count)))
+        self.summary_ui.mnr_amt_lbl.setText(str(len(minors_count)))
+        self.summary_ui.crt_amt_lbl.setText(str(len(courts_count)))
+        self.summary_ui.knt_amt_lbl.setText(str(len(knights_count)))
+        self.summary_ui.kng_amt_lbl.setText(str(len(kings_count)))
+        self.summary_ui.qen_amt_lbl.setText(str(len(queens_count)))
+        self.summary_ui.pag_amt_lbl.setText(str(len(pages_count)))
+        self.summary_ui.ace_amt_lbl.setText(str(len(aces_count)))
+
+        self.window.show()
 
     def launch_decipher_window(self):
         self.window = QtWidgets.QWidget()
@@ -155,6 +184,7 @@ class Ui_SingleTwoDecipher(object):
         _translate = QtCore.QCoreApplication.translate
         SingleTwoDecipher.setWindowTitle(_translate("SingleTwoDecipher", "Form"))
         self.decipher_btn.setText(_translate("SingleTwoDecipher", "Show Explanation"))
+        self.summary_btn.setText(_translate("SingleTwoDecipher", "Get Summary"))
 
 
 if __name__ == "__main__":
