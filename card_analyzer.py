@@ -5,7 +5,7 @@ with open('sql/exports/card_meaning.csv', mode='r') as file:
     card_mean_lines = []
     for lines in card_meanings:
         card_mean_lines.append(lines)
-
+# print(card_mean_lines)
 
 def get_general_meaning(card):
     basic_meaning = []
@@ -23,3 +23,4 @@ def get_negative_meaning(card):
             negative_meaning.append(card_mean_lines[i][3])
 
     return negative_meaning[0]
+
