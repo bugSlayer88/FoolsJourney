@@ -88,9 +88,52 @@ def get_courts(cards_pulled_list):
 
     return courts_pulled
 
-# cards_pulled_test = ['King of Coins', 'Queen of Swords', 'Empress', 'Magician', 'Three of Wands', 'Ten of Coins', 'World', 'Ace of Wands', 'Hierophant', 'Seven of Coins', 'Knight of Wands', 'Page of Coins', 'Queen of Cups']
+def get_card_numbers(cards_pulled_list):
+    numbers_list = []
+    for i in range(len(cards_pulled_list)):
+        card_number = cards_pulled_list[i][7]
+        numbers_list.append(card_number)
+
+    ones = numbers_list.count('1')
+    twos = numbers_list.count('2')
+    threes = numbers_list.count('3')
+    fours = numbers_list.count('4')
+    fives = numbers_list.count('5')
+    sixes = numbers_list.count('6')
+    sevens = numbers_list.count('7')
+    eights = numbers_list.count('8')
+    nines = numbers_list.count('9')
+    tens = numbers_list.count('10')
+
+    card_num_tally = {
+        "ones": ones,
+        "twos": twos,
+        "threes": threes,
+        "fours": fours,
+        "fives": fives,
+        "sixes": sixes,
+        "sevens": sevens,
+        "eights": eights,
+        "nines": nines,
+        "tens": tens
+    }
+
+    del_keys = []
+    for key, value in card_num_tally.items():
+        if value == 0:
+            del_keys.append(key)
+    for key in del_keys:
+        card_num_tally.pop(key)
+
+    return card_num_tally
+
+
+cards_pulled_test = ['King of Coins', 'Queen of Swords', 'Empress', 'Magician', 'Three of Wands', 'Ten of Coins', 'World', 'Ace of Wands', 'Hierophant', 'Seven of Coins', 'Knight of Wands', 'Page of Coins', 'Queen of Cups']
 # #
-# build_list = build_card_list(cards_pulled_test)
+build_list = build_card_list(cards_pulled_test)
+print(build_list)
+number_test = get_card_numbers(build_list)
+print(number_test)
 # #
 # majors_test = get_majors(build_list)
 # minors_test = get_minors(build_list)
@@ -107,3 +150,6 @@ def get_courts(cards_pulled_list):
 # print(pages_test)
 # print(knights_test)
 # print(court_test)
+
+# if 'King' in cards_pulled_test[0]:
+#     print('yessir')
